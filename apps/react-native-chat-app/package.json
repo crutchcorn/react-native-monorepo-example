@@ -11,8 +11,8 @@
     "build:android:release:apk": "cd android && ./gradlew assembleRelease",
     "build:android:debug:apk": "cd android && ./gradlew assembleDebug",
     "build:android:release:aab": "cd android && ./gradlew bundleRelease",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --resolve-plugins-relative-to ../..",
+    "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix --resolve-plugins-relative-to ../..",
     "test": "jest",
     "tsc": "tsc --noEmit"
   },

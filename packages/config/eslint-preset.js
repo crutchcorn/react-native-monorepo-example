@@ -9,7 +9,8 @@ module.exports = {
   plugins: ["prettier"],
   rules: {
     "no-extra-boolean-cast": "off",
-     // suppress errors for missing 'import React' in files
-    "react/react-in-jsx-scope": "off"
+    // suppress errors for missing 'import React' in files
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-type": "off",
   },
 };
