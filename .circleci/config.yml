@@ -16,12 +16,6 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - checkout
-      - run:
-          name: Setup YARNRC
-          command: |
-            cp .yarnrc.yml.global.example ~/.yarnrc.yml
-            sed -i "s/GITHUB_TOKEN/$GITHUB_TOKEN/g" ~/.yarnrc.yml
-            sed -i "s/FONTAWESOME_TOKEN/$FONTAWESOME_TOKEN/g" ~/.yarnrc.yml
       - node/install-packages:
           pkg-manager: yarn-berry
       - persist_to_workspace:

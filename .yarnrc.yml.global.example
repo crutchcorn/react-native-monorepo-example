@@ -1,8 +1,0 @@
-npmScopes:
-  yourcompany:
-    npmRegistryServer: https://npm.pkg.github.com
-    npmAuthToken: GITHUB_TOKEN
-  fortawesome:
-    npmRegistryServer: https://npm.fontawesome.com
-    npmAuthToken: FONTAWESOME_TOKEN
-    npmAlwaysAuth: true
