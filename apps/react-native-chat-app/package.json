@@ -1,0 +1,38 @@
+{
+  "name": "@crutchcorn/react-native-chat-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "build:android:release": "npm run build:android:release:apk",
+    "build:android:debug": "npm run build:android:debug:apk",
+    "build:android:release:apk": "cd android && ./gradlew assembleRelease",
+    "build:android:debug:apk": "cd android && ./gradlew assembleDebug",
+    "build:android:release:aab": "cd android && ./gradlew bundleRelease",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "test": "jest",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@crutchcorn/shared-elements": "workspace:*",
+    "react": "18.1.0",
+    "react-native": "0.70.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@crutchcorn/config": "workspace:*",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react": "^18.0.21",
+    "@types/react-native": "^0.70.4",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "0.72.3",
+    "react-test-renderer": "18.1.0",
+    "typescript": "^4.8.4"
+  }
+}

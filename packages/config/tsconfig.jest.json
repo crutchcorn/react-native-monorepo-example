@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "types": ["node", "jest"],
+    "isolatedModules": false,
+    "noUnusedLocals": false
+  },
+  "include": ["**/*.spec.tsx"],
+  "exclude": []
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@crutchcorn/config",
+  "private": true,
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint '*.{js,jsx,ts,tsx}'",
+    "format": "eslint '*.{js,jsx,ts,tsx}' --fix"
+  },
+  "files": [
+    "babel.config.js",
+    "eslint-preset.js",
+    "jest.config.js",
+    "jest/setup-files-after-env.js",
+    "tsconfig.jest.json",
+    "tsconfig.json"
+  ],
+  "devDependencies": {
+    "@testing-library/jest-native": "^5.0.0",
+    "react-native": "0.70.3",
+    "typescript": "^4.8.4"
+  }
+}

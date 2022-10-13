@@ -1,0 +1,9 @@
+{
+    "extends": "@crutchcorn/config/tsconfig.json",
+    "compilerOptions": {
+        "types": ["node", "jest"],
+        "declaration": true,
+        "outDir": "dist",
+        "noEmit": false
+    }
+}

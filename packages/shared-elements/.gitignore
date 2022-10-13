@@ -1,0 +1,6 @@
+node_modules
+/dist
+.npmrc
+.idea/
+env.ts
+/dist/src/env.js

@@ -1,0 +1,76 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+
+commands:
+  install_node:
+    description: "Install Node and Yarn"
+    steps:
+      - node/install:
+          install-yarn: true
+          node-version: "16.13"
+
+jobs:
+  setup:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - checkout
+      - run:
+          name: Setup YARNRC
+          command: |
+            cp .yarnrc.yml.global.example ~/.yarnrc.yml
+            sed -i "s/GITHUB_TOKEN/$GITHUB_TOKEN/g" ~/.yarnrc.yml
+            sed -i "s/FONTAWESOME_TOKEN/$FONTAWESOME_TOKEN/g" ~/.yarnrc.yml
+      - node/install-packages:
+          pkg-manager: yarn-berry
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  lint:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          command: yarn lint
+          name: Run linter
+  test:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          command: yarn test
+          name: Run tests
+  build:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          command: yarn tsc
+          name: Check against TypeScript build
+
+workflows:
+  lint_test_build:
+    jobs:
+      - setup:
+          pre-steps:
+            - install_node
+      - lint:
+          requires: [setup]
+          pre-steps:
+            - install_node
+      - test:
+          requires: [setup]
+          pre-steps:
+            - install_node
+      - build:
+          requires: [setup]
+          pre-steps:
+            - install_node

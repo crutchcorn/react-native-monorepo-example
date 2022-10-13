@@ -1,0 +1,3 @@
+{
+  "extends": "@crutchcorn/config/tsconfig.jest.json"
+}
