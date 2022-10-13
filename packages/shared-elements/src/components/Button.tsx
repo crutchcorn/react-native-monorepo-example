@@ -1,7 +1,7 @@
-import { Button as RNButton } from 'react-native';
+import { Button as RNButton } from "react-native";
 
 interface ButtonProps {
-    title: string;
+  title: string;
 }
 
-export const Button = ({ title }: ButtonProps) => <RNButton title={title} />
+export const Button = ({ title }: ButtonProps) => <RNButton title={title} />;
