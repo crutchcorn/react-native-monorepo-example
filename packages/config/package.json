@@ -9,6 +9,7 @@
   },
   "files": [
     "babel.config.js",
+    "get-metro-config.js",
     "eslint-preset.js",
     "jest.config.js",
     "jest/setup-files-after-env.js",
