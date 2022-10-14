@@ -5,6 +5,7 @@ import { MessageList } from "../../components/message-list";
 import { BottomBar } from "../../components/bottom-bar";
 import { HeaderBar } from "../../components/header-bar";
 import { UserMessage } from "../../types/message";
+import { MessagesUIContainer } from "./messages.styles";
 
 interface MessagesUIProps {
   messages: UserMessage[];
@@ -20,7 +21,7 @@ export const MessagesUI = ({
   onMenuPress,
 }: MessagesUIProps) => {
   return (
-    <View style={{ flex: 1 }}>
+    <MessagesUIContainer>
       <HeaderBar
         headerTitle="Corbin"
         onMenuPress={onMenuPress}
@@ -40,6 +41,6 @@ export const MessagesUI = ({
         textValue={messageText}
         onTextValueChange={setMessageText}
       />
-    </View>
+    </MessagesUIContainer>
   );
 };

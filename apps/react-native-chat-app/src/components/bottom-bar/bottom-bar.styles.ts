@@ -6,7 +6,7 @@ export const BottomBarContainer = styled(View)`
   flex-direction: row;
   flex-wrap: nowrap;
   border-top: 2px solid #ebecee;
-  background: white;
+  background: ${(props) => props.theme.background_primary};
   padding: 8px;
 `;
 
@@ -21,9 +21,9 @@ const iconButtonBase = css`
 
 export const AddMoreButton = styled(TouchableHighlight)`
   ${iconButtonBase};
-  background: #ebecee;
+  background: ${(props) => props.theme.background_secondary};
 `;
 export const SendButton = styled(TouchableHighlight)`
   ${iconButtonBase};
-  background: #5865F2;
+  background: ${(props) => props.theme.brand_accent};
 `;

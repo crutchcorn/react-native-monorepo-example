@@ -6,16 +6,23 @@ import { MessagesView } from "./views/messages/messages.view";
 import "./utils/setup-dayjs";
 import { SettingsView } from "./views/settings/settings";
 import { RootStack } from "./navigators/root";
+import { ThemeProvider } from "@crutchcorn/shared-elements";
+import styled from "styled-components";
 
 const queryClient = new QueryClient();
 
-export const App = () => {
+const AppSafeAreaView = styled(SafeAreaView)`
+  flex: 1;
+  background-color: ${(props) => props.theme.background_primary};
+`;
+
+export const AppBase = () => {
   const isDarkMode = useColorScheme() === "dark";
 
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer>
-        <SafeAreaView style={{ flex: 1 }}>
+        <AppSafeAreaView>
           <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
           <RootStack.Navigator
             initialRouteName="Messages"
@@ -24,8 +31,16 @@ export const App = () => {
             <RootStack.Screen name="Messages" component={MessagesView} />
             <RootStack.Screen name="Settings" component={SettingsView} />
           </RootStack.Navigator>
-        </SafeAreaView>
+        </AppSafeAreaView>
       </NavigationContainer>
     </QueryClientProvider>
+  );
+};
+
+export const App = () => {
+  return (
+    <ThemeProvider>
+      <AppBase />
+    </ThemeProvider>
   );
 };

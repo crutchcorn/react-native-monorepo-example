@@ -1,6 +1,6 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { RoundedTextInput } from "@crutchcorn/shared-elements";
+import { RoundedTextInput, useTheme } from "@crutchcorn/shared-elements";
 import {
   BottomBarContainer,
   AddMoreButton,
@@ -22,10 +22,11 @@ export const BottomBar = ({
   textValue,
   onTextValueChange,
 }: BottomBarProps) => {
+  const theme = useTheme();
   return (
     <BottomBarContainer>
       <AddMoreButton onPress={onAddPress}>
-        <Icon name="add" size={24} color="#83898E" />
+        <Icon name="add" size={24} color={theme.foreground_tertiary} />
       </AddMoreButton>
       <RoundedTextInput
         placeholder={placeholder}
@@ -33,7 +34,7 @@ export const BottomBar = ({
         onValueChange={onTextValueChange}
       />
       <SendButton onPress={onSendPress}>
-        <Icon name="send" size={20} color="#FFFFFF" />
+        <Icon name="send" size={20} color={theme.brand_on_accent} />
       </SendButton>
     </BottomBarContainer>
   );

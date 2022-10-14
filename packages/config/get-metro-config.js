@@ -34,6 +34,12 @@ return {
           type: 'sourceFile',
         };
       }
+      if (moduleName === 'styled-components') {
+        return {
+          filePath: path.resolve(path.join(__dirname, "./node_modules/styled-components/native/dist/styled-components.native.cjs.js")),
+          type: 'sourceFile',
+        };
+      }
       // Optionally, chain to the standard Metro resolver.
       return context.resolveRequest(context, moduleName, platform);
     },
