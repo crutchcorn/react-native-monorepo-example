@@ -73,7 +73,11 @@ export const App = () => {
     <QueryClientProvider client={queryClient}>
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-        <HeaderBar/>
+        <HeaderBar
+          headerTitle="Corbin"
+          onMenuPress={() => {}}
+          onSearchPress={() => {}}
+        />
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={{ flex: 1 }}
@@ -81,7 +85,11 @@ export const App = () => {
         >
           <MessageList messages={messages} style={{ flex: 1 }} />
         </ScrollView>
-        <BottomBar/>
+        <BottomBar
+          placeholder="Message"
+          onAddPress={() => {}}
+          onSendPress={() => {}}
+        />
       </SafeAreaView>
     </QueryClientProvider>
   );

@@ -7,16 +7,23 @@ import {
 } from "./header-bar.styles";
 
 interface HeaderBarProps {
+  headerTitle: string;
+  onMenuPress: () => void;
+  onSearchPress: () => void;
 }
 
-export const HeaderBar = ({}: HeaderBarProps) => {
+export const HeaderBar = ({
+  headerTitle,
+  onMenuPress,
+  onSearchPress
+}: HeaderBarProps) => {
   return (
     <HeaderBarContainer>
-      <IconButton>
+      <IconButton onPress={onMenuPress}>
         <Icon name="menu" size={24} color="#83898E" />
       </IconButton>
-      <HeaderText>Eduardo</HeaderText>
-      <IconButton>
+      <HeaderText>{headerTitle}</HeaderText>
+      <IconButton onPress={onSearchPress}>
         <Icon name="search" size={20} color="#83898E" />
       </IconButton>
     </HeaderBarContainer>
