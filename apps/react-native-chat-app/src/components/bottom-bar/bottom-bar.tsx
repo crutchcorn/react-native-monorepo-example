@@ -25,7 +25,7 @@ export const BottomBar = ({
   const theme = useTheme();
   return (
     <BottomBarContainer>
-      <AddMoreButton onPress={onAddPress}>
+      <AddMoreButton onPress={onAddPress} accessibilityLabel="Send an attachment">
         <Icon name="add" size={24} color={theme.foreground_tertiary} />
       </AddMoreButton>
       <RoundedTextInput
@@ -33,7 +33,7 @@ export const BottomBar = ({
         value={textValue}
         onValueChange={onTextValueChange}
       />
-      <SendButton onPress={onSendPress}>
+      <SendButton onPress={onSendPress} accessibilityLabel="Send message">
         <Icon name="send" size={20} color={theme.brand_on_accent} />
       </SendButton>
     </BottomBarContainer>
