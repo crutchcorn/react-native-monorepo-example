@@ -1,5 +1,6 @@
-import React from "react";
-import { View } from "react-native";
+import dayjs from "dayjs";
+import React, { useMemo } from "react";
+import { UserMessage } from "../../types/message";
 import {
   DateString,
   MessageBodyContainer,
@@ -10,21 +11,29 @@ import {
   ProfilePicture,
   Username,
 } from "./message.styles";
-const crutchcornImg = require("../../assets/crutchcorn.jpg");
 
-export const Message = () => {
+interface MessageProps {
+  message: UserMessage;
+}
+
+export const Message = ({ message }: MessageProps) => {
+  const displayedDate = useMemo(() => {
+    const dayJsDay = dayjs(message.date);
+    const relativeDate = dayJsDay.fromNow();
+    const time = dayJsDay.format("H:mm A");
+    return `${relativeDate} at asd fasdf asd fa df ${time}`;
+  }, [message]);
+
   return (
     <MessageContainer>
-      <ProfilePicture source={crutchcornImg} />
+      <ProfilePicture source={message.profilePicture} />
       <MessageTextContainer>
         <MessageHeaderContainer>
-          <Username>crutchcorn</Username>
-          <DateString>Today at 7:19PM</DateString>
+          <Username numberOfLines={1}>{message.username}</Username>
+          <DateString numberOfLines={1}>{displayedDate}</DateString>
         </MessageHeaderContainer>
         <MessageBodyContainer>
-          <MessageContents>
-            The quick brown fox jumps over the lazy dog! Hello world, how are you doing this very fine day?
-          </MessageContents>
+          <MessageContents>{message.message}</MessageContents>
         </MessageBodyContainer>
       </MessageTextContainer>
     </MessageContainer>

@@ -1948,6 +1948,7 @@ __metadata:
     "@types/react": ^18.0.21
     "@types/react-native": ^0.70.4
     babel-jest: ^26.6.3
+    dayjs: ^1.11.5
     eslint: ^7.32.0
     jest: ^26.6.3
     metro-react-native-babel-preset: 0.72.3
@@ -5394,7 +5395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.8.15":
+"dayjs@npm:^1.11.5, dayjs@npm:^1.8.15":
   version: 1.11.5
   resolution: "dayjs@npm:1.11.5"
   checksum: e3bbaa7b4883b31be4bf75a181f1447fbb19800c29b332852125aab96baeff3ac232dcba8b88c4ea17d3b636c99dac5fb9d1af4bb6ae26615698bbc4a852dffb

@@ -9,9 +9,60 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // import { Button } from "@crutchcorn/shared-elements";
-import { Message } from "./components/message";
+import { MessageList } from "./components/message-list";
 
 const queryClient = new QueryClient();
+
+// TODO: Extract to function
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import { UserMessage } from "./types/message";
+dayjs.extend(relativeTime);
+
+const messages: UserMessage[] = [
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '1'
+  },
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '2'
+  },
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '3'
+  },
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '4'
+  },
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '5'
+  },
+  {
+    username: "crutchcorn",
+    message: "This is a test, testing to see how this all looks",
+    profilePicture: require("./assets/crutchcorn.jpg"),
+    date: new Date(),
+    id: '6'
+  },
+];
 
 export const App = () => {
   const isDarkMode = useColorScheme() === "dark";
@@ -21,10 +72,7 @@ export const App = () => {
       <SafeAreaView>
         <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
         <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <Message />
-          <Message />
-          <Message />
-          <Message />
+          <MessageList messages={messages}/>
 
           {/* <Text>This is a button</Text>
           <Button title="Testing" /> */}
