@@ -23,6 +23,7 @@
     "dayjs": "^1.11.5",
     "react": "18.1.0",
     "react-native": "0.70.3",
+    "react-native-vector-icons": "^9.2.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

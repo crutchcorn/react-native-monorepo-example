@@ -17,6 +17,7 @@ const queryClient = new QueryClient();
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { UserMessage } from "./types/message";
+import { BottomBar } from "./components/bottom-bar";
 dayjs.extend(relativeTime);
 
 const messages: UserMessage[] = [
@@ -78,6 +79,7 @@ export const App = () => {
         >
           <MessageList messages={messages} style={{ flex: 1 }} />
         </ScrollView>
+        <BottomBar/>
       </SafeAreaView>
     </QueryClientProvider>
   );
