@@ -7,7 +7,6 @@ const messagesKey = "MESSAGES";
 export const loadMessages = async () => {
   const data = await AsyncStorage.getItem(messagesKey);
   if (!data) return [];
-  console.log({ data });
   return JSON.parse(data) as UserMessage[];
 };
 

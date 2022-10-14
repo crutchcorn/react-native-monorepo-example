@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "format": "turbo run format",
     "tsc": "turbo run tsc",
-    "test": "turbo run test --runInBand",
+    "test": "turbo run test -- --runInBand --forceExit",
     "prepare": "husky install"
   },
   "workspaces": {
