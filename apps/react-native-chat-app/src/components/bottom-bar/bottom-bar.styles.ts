@@ -1,4 +1,4 @@
-import { View, TextInput, TouchableHighlight } from "react-native";
+import { View, TouchableHighlight } from "react-native";
 import styled, { css } from "styled-components";
 
 export const BottomBarContainer = styled(View)`

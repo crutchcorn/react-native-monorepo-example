@@ -7,6 +7,7 @@ import { ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");
 
 export const MessagesView = () => {

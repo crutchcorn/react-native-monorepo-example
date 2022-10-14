@@ -32,7 +32,7 @@ const renderMessagesPage = () => {
 
 describe("Messages", () => {
   test("Should show a message when sent", async () => {
-    const { findByPlaceholderText, findByLabelText, findByText, debug } =
+    const { findByPlaceholderText, findByLabelText, findByText } =
       renderMessagesPage();
 
     const input = await findByPlaceholderText("Message");

@@ -29,7 +29,9 @@ export const MessagesUI = ({
       <HeaderBar
         headerTitle="Corbin"
         onMenuPress={onMenuPress}
-        onSearchPress={() => {}}
+        onSearchPress={() => {
+          console.log("Hi");
+        }}
       />
       <ScrollView
         ref={messageListRef}
@@ -41,7 +43,9 @@ export const MessagesUI = ({
       </ScrollView>
       <BottomBar
         placeholder="Message"
-        onAddPress={() => {}}
+        onAddPress={() => {
+          console.log("Hi");
+        }}
         onSendPress={onSendPress}
         textValue={messageText}
         onTextValueChange={setMessageText}
