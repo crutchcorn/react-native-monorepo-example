@@ -25,42 +25,42 @@ const messages: UserMessage[] = [
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '1'
+    id: "1",
   },
   {
     username: "crutchcorn",
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '2'
+    id: "2",
   },
   {
     username: "crutchcorn",
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '3'
+    id: "3",
   },
   {
     username: "crutchcorn",
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '4'
+    id: "4",
   },
   {
     username: "crutchcorn",
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '5'
+    id: "5",
   },
   {
     username: "crutchcorn",
     message: "This is a test, testing to see how this all looks",
     profilePicture: require("./assets/crutchcorn.jpg"),
     date: new Date(),
-    id: '6'
+    id: "6",
   },
 ];
 
@@ -69,13 +69,14 @@ export const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SafeAreaView>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <MessageList messages={messages}/>
-
-          {/* <Text>This is a button</Text>
-          <Button title="Testing" /> */}
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1 }}
+        >
+          <MessageList messages={messages} style={{ flex: 1 }} />
         </ScrollView>
       </SafeAreaView>
     </QueryClientProvider>

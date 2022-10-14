@@ -32,6 +32,7 @@ export const Username = styled(Text)`
   margin-right: 12px;
   width: 1px;
   flex-grow: 1;
+  font-weight: 500;
 `;
 
 export const DateString = styled(Text)`
