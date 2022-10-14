@@ -14,6 +14,6 @@ export const RoundedTextInput = ({placeholder, value, onValueChange}: RoundedTex
         placeholder={placeholder}
         placeholderTextColor={theme.foreground_tertiary}
         value={value}
-        onChange={e => onValueChange(e.target.value)}
+        onChangeText={onValueChange}
       />
 }

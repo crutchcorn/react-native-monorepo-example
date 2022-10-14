@@ -1,52 +1,23 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { UserMessage } from "../types/message";
+import { v4 as uuidv4 } from "uuid";
+
+const messagesKey = "MESSAGES";
 
 export const loadMessages = async () => {
-  const messages: UserMessage[] = [
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "1",
-    },
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "2",
-    },
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "3",
-    },
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "4",
-    },
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "5",
-    },
-    {
-      username: "crutchcorn",
-      message: "This is a test, testing to see how this all looks",
-      profilePicture: require("../assets/crutchcorn.jpg"),
-      date: new Date(),
-      id: "6",
-    },
-  ];
-
-  return messages;
+  const data = await AsyncStorage.getItem(messagesKey);
+  if (!data) return [];
+  console.log({data});
+  return JSON.parse(data) as UserMessage[];
 };
 
-export const storeMessages = async () => {};
+export const addMessage = async (
+  message: Omit<UserMessage, "id">
+) => {
+  const messages = await loadMessages();
+  const newMessages = [...messages, {
+    ...message,
+    id: uuidv4(),
+  }];
+  await AsyncStorage.setItem(messagesKey, JSON.stringify(newMessages));
+};

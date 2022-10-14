@@ -12,6 +12,7 @@ interface MessagesUIProps {
   messageText: string;
   setMessageText: (val: string) => void;
   onMenuPress: () => void;
+  onSendPress: () => void;
 }
 
 export const MessagesUI = ({
@@ -19,6 +20,7 @@ export const MessagesUI = ({
   messageText,
   setMessageText,
   onMenuPress,
+  onSendPress
 }: MessagesUIProps) => {
   return (
     <MessagesUIContainer>
@@ -37,7 +39,7 @@ export const MessagesUI = ({
       <BottomBar
         placeholder="Message"
         onAddPress={() => {}}
-        onSendPress={() => {}}
+        onSendPress={onSendPress}
         textValue={messageText}
         onTextValueChange={setMessageText}
       />

@@ -36,7 +36,7 @@ export const Username = styled(Text)`
 `;
 
 export const DateString = styled(Text)`
-  color: ${(props) => props.theme.foreground_secondary};
+  color: ${(props) => props.theme.foreground_tertiary};
   width: 40%;
 `;
 
@@ -46,6 +46,6 @@ export const MessageBodyContainer = styled(View)`
 
 export const MessageContents = styled(Text)`
   font-size: 16px;
-  color: ${(props) => props.theme.foreground_tertiary};
+  color: ${(props) => props.theme.foreground_secondary};
   flex-shrink: 1;
 `;
