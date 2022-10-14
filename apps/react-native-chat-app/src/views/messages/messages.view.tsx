@@ -1,31 +1,48 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { useMutation, useQuery } from "@tanstack/react-query";
 
 import { addMessage, loadMessages } from "../../services/messages";
 import { MessagesUI } from "./messages.ui";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
 
-const crutchcornPicture = require('../../assets/crutchcorn.jpg');
+const crutchcornPicture = require("../../assets/crutchcorn.jpg");
 
 export const MessagesView = () => {
   const navigation = useNavigation<RootScreenProps<"Messages">>();
 
-  const { data: messages, isLoading, refetch } = useQuery(["messages"], () => {
-    return loadMessages();
-  });
+  const messageListRef = useRef<ScrollView>(null);
 
-  const mutation = useMutation((newMessage: string) => {
-    return addMessage({
-      message: newMessage,
-      username: "crutchcorn",
-      date: new Date(),
-      profilePicture: crutchcornPicture
-    });
-  }, { 
-    onSuccess: () => refetch()
-  });
+  const {
+    data: messages,
+    isLoading,
+    refetch,
+  } = useQuery(
+    ["messages"],
+    () => {
+      return loadMessages();
+    },
+    {
+      onSuccess: () => {
+        messageListRef.current?.scrollToEnd?.();
+      },
+    }
+  );
+
+  const mutation = useMutation(
+    (newMessage: string) => {
+      return addMessage({
+        message: newMessage,
+        username: "crutchcorn",
+        date: new Date(),
+        profilePicture: crutchcornPicture,
+      });
+    },
+    {
+      onSuccess: () => refetch(),
+    }
+  );
 
   const [messageText, setMessageText] = useState("");
 
@@ -54,10 +71,11 @@ export const MessagesView = () => {
       messageText={messageText}
       setMessageText={setMessageText}
       onSendPress={() => {
-        mutation.mutate(messageText)
-        setMessageText("")
+        mutation.mutate(messageText);
+        setMessageText("");
       }}
       onMenuPress={() => navigation.navigate("Settings")}
+      messageListRef={messageListRef}
     />
   );
 };

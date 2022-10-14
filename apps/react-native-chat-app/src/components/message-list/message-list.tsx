@@ -10,7 +10,6 @@ interface MessageListProps {
 }
 
 export const MessageList = ({ messages, style }: MessageListProps) => {
-  console.log({messages})
   return (
     <MessageListContainer style={style}>
       {messages.map((message, i) => {
