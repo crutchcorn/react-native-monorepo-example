@@ -25,7 +25,10 @@ export const BottomBar = ({
   const theme = useTheme();
   return (
     <BottomBarContainer>
-      <AddMoreButton onPress={onAddPress} accessibilityLabel="Send an attachment">
+      <AddMoreButton
+        onPress={onAddPress}
+        accessibilityLabel="Send an attachment"
+      >
         <Icon name="add" size={24} color={theme.foreground_tertiary} />
       </AddMoreButton>
       <RoundedTextInput

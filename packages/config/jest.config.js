@@ -30,10 +30,11 @@ module.exports = {
       { configFile: path.resolve(__dirname, "./babel.config.js") },
     ],
     "^.+\\.tsx?$": [
-      "ts-jest", {
+      "ts-jest",
+      {
         babelConfig: path.resolve(__dirname, "./babel.config.js"),
         tsconfig: path.resolve(__dirname, "./tsconfig.jest.json"),
-      }
+      },
     ],
   },
   transformIgnorePatterns: [

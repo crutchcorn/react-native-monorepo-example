@@ -1,5 +1,5 @@
-import { Text } from "react-native"
+import { Text } from "react-native";
 
 export const SettingsView = () => {
-    return <Text>Testing</Text>
-}
+  return <Text>Testing</Text>;
+};

@@ -6,7 +6,7 @@ import { MessageListContainer, MessageContainer } from "./message-list.styles";
 
 interface MessageListProps {
   messages: UserMessage[];
-  style?: StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle>;
 }
 
 export const MessageList = ({ messages, style }: MessageListProps) => {

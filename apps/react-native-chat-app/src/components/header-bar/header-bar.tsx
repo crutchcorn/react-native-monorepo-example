@@ -1,10 +1,10 @@
 import { useTheme } from "@crutchcorn/shared-elements";
 import React from "react";
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from "react-native-vector-icons/MaterialIcons";
 import {
   HeaderBarContainer,
   IconButton,
-  HeaderText
+  HeaderText,
 } from "./header-bar.styles";
 
 interface HeaderBarProps {
@@ -16,7 +16,7 @@ interface HeaderBarProps {
 export const HeaderBar = ({
   headerTitle,
   onMenuPress,
-  onSearchPress
+  onSearchPress,
 }: HeaderBarProps) => {
   const theme = useTheme();
   return (

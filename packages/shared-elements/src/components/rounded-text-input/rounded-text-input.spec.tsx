@@ -20,7 +20,7 @@ const renderRoundedTextInput = () => {
     );
   };
 
-  return render(<Comp/>);
+  return render(<Comp />);
 };
 
 describe("Rounded Text Input", () => {

@@ -1,1 +1,1 @@
-export * from './bottom-bar';
+export * from "./bottom-bar";

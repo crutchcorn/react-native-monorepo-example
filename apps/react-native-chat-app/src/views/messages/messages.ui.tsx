@@ -13,7 +13,7 @@ interface MessagesUIProps {
   setMessageText: (val: string) => void;
   onMenuPress: () => void;
   onSendPress: () => void;
-  messageListRef: MutableRefObject<ScrollView | null>
+  messageListRef: MutableRefObject<ScrollView | null>;
 }
 
 export const MessagesUI = ({
@@ -22,7 +22,7 @@ export const MessagesUI = ({
   setMessageText,
   onMenuPress,
   onSendPress,
-  messageListRef
+  messageListRef,
 }: MessagesUIProps) => {
   return (
     <MessagesUIContainer>
