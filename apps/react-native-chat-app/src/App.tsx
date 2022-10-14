@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar, useColorScheme } from "react-native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { NavigationContainer } from "@react-navigation/native";
 import { MessagesView } from "./views/messages/messages.view";
-import { SettingsView } from "./views/settings/settings";
+import { SettingsView } from "./views/settings/settings.view";
 import { RootStack } from "./navigators/root";
 import { ThemeProvider } from "@crutchcorn/shared-elements";
 import styled from "styled-components";

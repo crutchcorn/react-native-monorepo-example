@@ -11,8 +11,8 @@ interface HeaderBarProps {
   headerTitle: string;
   iconNameLeft?: string;
   iconNameRight?: string;
-  onLeftIconPress: () => void;
-  onRightIconPress: () => void;
+  onLeftIconPress?: () => void;
+  onRightIconPress?: () => void;
 }
 
 export const HeaderBar = ({
