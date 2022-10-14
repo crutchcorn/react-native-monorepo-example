@@ -10,14 +10,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 // import { Button } from "@crutchcorn/shared-elements";
 import { MessageList } from "./components/message-list";
+import { BottomBar } from "./components/bottom-bar";
+import { HeaderBar } from "./components/header-bar";
+import { UserMessage } from "./types/message";
 
 const queryClient = new QueryClient();
 
 // TODO: Extract to function
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { UserMessage } from "./types/message";
-import { BottomBar } from "./components/bottom-bar";
 dayjs.extend(relativeTime);
 
 const messages: UserMessage[] = [
@@ -72,6 +73,7 @@ export const App = () => {
     <QueryClientProvider client={queryClient}>
       <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
+        <HeaderBar/>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={{ flex: 1 }}
