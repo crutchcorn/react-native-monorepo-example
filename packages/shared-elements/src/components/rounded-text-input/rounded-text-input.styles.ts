@@ -10,6 +10,6 @@ export const MessageInput = styled(TextInput)`
   padding-right: 16px;
   margin-left: 8px;
   margin-right: 8px;
-  background: #ebecee;
+  background: ${props => props.theme.background_secondary};
   border-radius: 999px;
 `;

@@ -2,12 +2,12 @@ import { Image, Text, View } from "react-native";
 import styled from "styled-components";
 
 export const MessageContainer = styled(View)`
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    padding-left: 12px;
-    padding-right: 12px;
-`
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding-left: 12px;
+  padding-right: 12px;
+`;
 
 export const ProfilePicture = styled(Image)`
   height: 40px;
@@ -22,12 +22,12 @@ export const MessageTextContainer = styled(View)`
 `;
 
 export const MessageHeaderContainer = styled(View)`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Username = styled(Text)`
-  color: #3f3f40;
+  color: ${(props) => props.theme.foreground_secondary};
   font-size: 18px;
   margin-right: 12px;
   width: 1px;
@@ -36,7 +36,7 @@ export const Username = styled(Text)`
 `;
 
 export const DateString = styled(Text)`
-  color: #86898c;
+  color: ${(props) => props.theme.foreground_secondary};
   width: 40%;
 `;
 
@@ -46,6 +46,6 @@ export const MessageBodyContainer = styled(View)`
 
 export const MessageContents = styled(Text)`
   font-size: 16px;
-  color: #3f3f40;
+  color: ${(props) => props.theme.foreground_tertiary};
   flex-shrink: 1;
 `;

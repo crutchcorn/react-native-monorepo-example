@@ -1,3 +1,4 @@
+import { useTheme } from "@crutchcorn/shared-elements";
 import React from "react";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
@@ -17,14 +18,15 @@ export const HeaderBar = ({
   onMenuPress,
   onSearchPress
 }: HeaderBarProps) => {
+  const theme = useTheme();
   return (
     <HeaderBarContainer>
       <IconButton onPress={onMenuPress}>
-        <Icon name="menu" size={24} color="#83898E" />
+        <Icon name="menu" size={24} color={theme.foreground_tertiary} />
       </IconButton>
       <HeaderText>{headerTitle}</HeaderText>
       <IconButton onPress={onSearchPress}>
-        <Icon name="search" size={20} color="#83898E" />
+        <Icon name="search" size={20} color={theme.foreground_tertiary} />
       </IconButton>
     </HeaderBarContainer>
   );

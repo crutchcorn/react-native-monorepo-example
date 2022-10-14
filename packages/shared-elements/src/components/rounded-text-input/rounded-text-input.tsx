@@ -1,4 +1,5 @@
 import React from "react"
+import { useTheme } from "../../hooks";
 import { MessageInput } from "./rounded-text-input.styles"
 
 interface RoundedTextInputProps {
@@ -8,9 +9,10 @@ interface RoundedTextInputProps {
 }
 
 export const RoundedTextInput = ({placeholder, value, onValueChange}: RoundedTextInputProps) => {
+    const theme = useTheme();
     return <MessageInput
         placeholder={placeholder}
-        placeholderTextColor={"#83898E"}
+        placeholderTextColor={theme.foreground_tertiary}
         value={value}
         onChange={e => onValueChange(e.target.value)}
       />
