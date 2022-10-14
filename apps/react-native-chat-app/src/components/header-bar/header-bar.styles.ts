@@ -11,6 +11,7 @@ export const HeaderBarContainer = styled(View)`
 
 export const IconButton = styled(TouchableHighlight)`
   padding: 12px;
+  border-radius: 4px;
 `
 
 export const HeaderText = styled(Text)`

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -69,6 +69,8 @@ const messages: UserMessage[] = [
 export const App = () => {
   const isDarkMode = useColorScheme() === "dark";
 
+  const [messageText, setMessageText] = useState("");
+
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -89,6 +91,8 @@ export const App = () => {
           placeholder="Message"
           onAddPress={() => {}}
           onSendPress={() => {}}
+          textValue={messageText}
+          onTextValueChange={setMessageText}
         />
       </SafeAreaView>
     </QueryClientProvider>
