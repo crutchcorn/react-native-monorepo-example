@@ -10,13 +10,13 @@ export const MessageContainer = styled(View)`
 `
 
 export const ProfilePicture = styled(Image)`
-  height: 56px;
-  width: 56px;
+  height: 40px;
+  width: 40px;
   border-radius: 99px;
 `;
 
 export const MessageTextContainer = styled(View)`
-  margin-left: 16px;
+  margin-left: 12px;
   width: 1px;
   flex-grow: 1;
 `;
