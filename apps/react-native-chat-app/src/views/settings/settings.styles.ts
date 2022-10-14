@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 export const SettingsUIContainer = styled(View)`
     background: ${props => props.theme.background_primary};
+    flex: 1;
 `;
 
 export const UserHeaderContainer = styled(View)`
     padding-top: 24px
-    padding: bottom: 16px;
-    justify-content: center;
+    padding-bottom: 16px;
+    align-items: center;
 `;
 
 export const UserProfilePicture = styled(Image)`
@@ -31,9 +32,9 @@ export const ListSubheader = styled(Text)`
 `
 
 export const ListDivider = styled(View)`
-    padding-top: 8px;
+    margin-top: 8px;
     height: 1px;
     width: 100%;
-    padding-bottom: 8px;
+    margin-bottom: 8px;
     background: ${props => props.theme.divider};
 `

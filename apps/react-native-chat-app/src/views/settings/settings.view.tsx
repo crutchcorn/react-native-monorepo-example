@@ -2,6 +2,9 @@ import { useNavigation } from "@react-navigation/native";
 import { Text } from "react-native";
 import { RootScreenProps } from "../../navigators/root";
 import { SettingsUI } from "./settings.ui";
+
+import CommunityIcon from "react-native-vector-icons/MaterialCommunityIcons";
+
 const crutchcornPicture = require('../../assets/crutchcorn.jpg');
 
 export const SettingsView = () => {
@@ -15,35 +18,41 @@ export const SettingsView = () => {
           name: "Overview"
         },
         {
-          icon: 'moderation',
-          name: "Moderation"
+          icon: 'sword-cross',
+          name: "Moderation",
+          IconComponent: CommunityIcon
         },
         {
-          icon: 'audit',
-          name: "Audit Log"
+          icon: 'clipboard-text',
+          name: "Audit Log",
+          IconComponent: CommunityIcon
         },
         {
-          icon: "channels",
-          name: "Channels"
+          icon: "comment-text-multiple-outline",
+          name: "Channels",
+          IconComponent: CommunityIcon
         },
         {
-          icon: "integrations",
-          name: "Integrations"
+          icon: "gamepad-variant",
+          name: "Integrations",
+          IconComponent: CommunityIcon
         },
         {
-          icon: "emoji",
-          name: "Emoji"
+          icon: "sticker-emoji",
+          name: "Emoji",
+          IconComponent: CommunityIcon
         },
         {
           icon: "hook",
-          name: "Webhooks"
+          name: "Webhooks",
+          IconComponent: CommunityIcon
         }
       ]
     },
     {
       groupName: "COMMUNITY",
       listItems: [{
-        icon: "community",
+        icon: "people",
         name: "Enable Community"
       }]
     }]} />;

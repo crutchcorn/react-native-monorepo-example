@@ -1,12 +1,13 @@
 import React from "react";
 import { ScrollView } from "react-native";
 import { HeaderBar } from "../../components/header-bar";
-import { SettingsListItem } from "./components";
+import { SettingsListItem, SettingsListItemProps } from "./components";
 import { ListDivider, ListSubheader, SettingsUIContainer, UserHeaderContainer, UsernameText, UserProfilePicture } from "./settings.styles";
 
 interface SettingsListItem {
     icon: string;
     name: string;
+    IconComponent?: SettingsListItemProps['IconComponent']
     onPress?: () => void;
 }
 
@@ -30,7 +31,7 @@ export const SettingsUI = ({ goBack, username, profilePicture, settingsGroups }:
                 iconNameLeft="close"
                 onLeftIconPress={goBack}
             />
-            <ScrollView>
+            <ScrollView style={{ flex: 1 }}>
                 <UserHeaderContainer>
                     <UserProfilePicture source={profilePicture} />
                     <UsernameText>{username}</UsernameText>
@@ -40,10 +41,10 @@ export const SettingsUI = ({ goBack, username, profilePicture, settingsGroups }:
                         const isFirst = i === 0;
                         return (
                             <>
-                                <ListSubheader>{settingsGroup.groupName}</ListSubheader>
                                 {!isFirst && <ListDivider />}
+                                <ListSubheader>{settingsGroup.groupName}</ListSubheader>
                                 {settingsGroup.listItems.map(listItem =>
-                                    <SettingsListItem icon={listItem.icon} onPress={listItem.onPress} name={listItem.name} />
+                                    <SettingsListItem IconComponent={listItem.IconComponent} icon={listItem.icon} onPress={listItem.onPress} name={listItem.name} />
                                 )}
                             </>
                         )

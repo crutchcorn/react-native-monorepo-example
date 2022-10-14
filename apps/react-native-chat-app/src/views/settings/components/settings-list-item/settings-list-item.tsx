@@ -1,20 +1,27 @@
 import React from "react";
-import { SettingName, SettingsListItemContainer } from "./settings-list-item.styles";
+import { IconContainer, SettingName, SettingsListHighlight, SettingsListItemContainer } from "./settings-list-item.styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import { useTheme } from "@crutchcorn/shared-elements";
 
-interface SettingsListItemProps {
+export interface SettingsListItemProps {
     name: string;
     onPress?: () => void;
     icon: string;
+    IconComponent?: typeof Icon
 }
 
 export const SettingsListItem = ({ name,
     onPress,
-    icon }) => {
+    icon,
+    IconComponent = Icon
+}: SettingsListItemProps) => {
     const theme = useTheme();
-    return <SettingsListItemContainer onPress={onPress}>
-        <Icon name={icon} size={24} color={theme.foreground_tertiary} />
-        <SettingName>{name}</SettingName>
-    </SettingsListItemContainer>
+    return <SettingsListHighlight onPress={onPress}>
+        <SettingsListItemContainer>
+            <IconContainer>
+                <IconComponent name={icon} size={24} color={theme.foreground_tertiary} />
+            </IconContainer>
+            <SettingName>{name}</SettingName>
+        </SettingsListItemContainer>
+    </SettingsListHighlight>
 }
