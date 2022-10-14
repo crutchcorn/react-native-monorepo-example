@@ -10,18 +10,20 @@ interface MessagesUIProps {
   messages: UserMessage[];
   messageText: string;
   setMessageText: (val: string) => void;
+  onMenuPress: () => void;
 }
 
 export const MessagesUI = ({
   messages,
   messageText,
   setMessageText,
+  onMenuPress,
 }: MessagesUIProps) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <HeaderBar
         headerTitle="Corbin"
-        onMenuPress={() => {}}
+        onMenuPress={onMenuPress}
         onSearchPress={() => {}}
       />
       <ScrollView
