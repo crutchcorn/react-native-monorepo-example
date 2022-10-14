@@ -28,8 +28,10 @@ export const MessagesUI = ({
     <MessagesUIContainer>
       <HeaderBar
         headerTitle="Corbin"
-        onMenuPress={onMenuPress}
-        onSearchPress={() => {
+        iconNameLeft="menu"
+        iconNameRight="search"
+        onLeftIconPress={onMenuPress}
+        onRightIconPress={() => {
           console.log("Hi");
         }}
       />
