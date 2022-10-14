@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  ScrollView,
-  View,
-} from "react-native";
+import { ScrollView, View } from "react-native";
 
 import { MessageList } from "../../components/message-list";
 import { BottomBar } from "../../components/bottom-bar";
@@ -10,15 +7,18 @@ import { HeaderBar } from "../../components/header-bar";
 import { UserMessage } from "../../types/message";
 
 interface MessagesUIProps {
-    messages: UserMessage[];
-    messageText: string;
-    setMessageText: (val: string) => void;
+  messages: UserMessage[];
+  messageText: string;
+  setMessageText: (val: string) => void;
 }
 
-export const MessagesUI = ({messages,messageText,
-    setMessageText }) => {
+export const MessagesUI = ({
+  messages,
+  messageText,
+  setMessageText,
+}: MessagesUIProps) => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <HeaderBar
         headerTitle="Corbin"
         onMenuPress={() => {}}
