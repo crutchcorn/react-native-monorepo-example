@@ -21,7 +21,7 @@ export const Message = ({ message }: MessageProps) => {
     const dayJsDay = dayjs(message.date);
     const relativeDate = dayJsDay.fromNow();
     const time = dayJsDay.format("H:mm A");
-    return `${relativeDate} at asd fasdf asd fa df ${time}`;
+    return `${relativeDate} at ${time}`;
   }, [message]);
 
   return (
