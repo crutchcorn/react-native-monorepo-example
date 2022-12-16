@@ -1,50 +1,59 @@
 {
-    "name": "@crutchcorn/shared-elements",
-    "version": "0.0.1",
-    "description": "The shared logic between apps in a React Native demo",
-    "main": "dist/src/index.js",
-    "types": "dist/src/index.d.ts",
-    "scripts": {
-        "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-        "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
-        "test": "jest",
-        "build": "vite build",
-        "tsc": "tsc --noEmit"
-    },
-    "peerDependencies": {
-        "react": "18.1.0",
-        "react-native": "0.70.3"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.12.9",
-        "@babel/runtime": "^7.12.5",
-        "@crutchcorn/config": "workspace:*",
-        "@react-native-async-storage/async-storage": "^1.17.10",
-        "@react-navigation/native": "^6.0.13",
-        "@react-navigation/stack": "^6.3.2",
-        "@testing-library/react-native": "^11.2.0",
-        "@types/react-native": "0.70.4",
-        "@types/react-test-renderer": "18.0.0",
-        "@vitejs/plugin-react": "^3.0.0",
-        "eslint": "^8.25.0",
-        "jest": "^29.1.2",
-        "react": "18.1.0",
-        "react-native": "0.70.3",
-        "react-test-renderer": "18.1.0",
-        "typescript": "^4.8.4",
-        "vite": "^4.0.0",
-        "vite-plugin-dts": "^1.7.1"
-    },
-    "files": [
-        "dist"
-    ],
-    "dependencies": {
-        "styled-components": "^5.3.6"
-    },
-    "exports": {
-        ".": {
-            "import": "./dist/shared-elements.mjs",
-            "require": "./dist/shared-elements.cjs"
-          }
-    }
+  "name": "@crutchcorn/shared-elements",
+  "version": "0.0.1",
+  "description": "The shared logic between apps in a React Native demo",
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
+    "test": "jest",
+    "build": "bob build",
+    "tsc": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@crutchcorn/config": "workspace:*",
+    "@react-native-async-storage/async-storage": "^1.17.10",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/stack": "^6.3.2",
+    "@testing-library/react-native": "^11.2.0",
+    "@types/react-native": "0.70.4",
+    "@types/react-test-renderer": "18.0.0",
+    "eslint": "^8.25.0",
+    "jest": "^29.1.2",
+    "react": "18.1.0",
+    "react-native": "0.70.3",
+    "react-native-builder-bob": "^0.20.3",
+    "react-test-renderer": "18.1.0",
+    "typescript": "^4.8.4"
+  },
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "dependencies": {
+    "styled-components": "^5.3.6"
+  },
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "react-native": "src/index.ts",
+  "types": "dist/typescript/index.d.ts",
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      [
+        "commonjs",
+        {
+          "copyFlow": true
+        }
+      ],
+      "module",
+      "typescript"
+    ]
+  }
 }
