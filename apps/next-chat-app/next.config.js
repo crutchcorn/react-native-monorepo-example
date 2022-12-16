@@ -11,6 +11,7 @@ module.exports = withPlugins([withTM, {
 
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
+      'styled-components': require.resolve('styled-components'),
       // Alias direct react-native imports to react-native-web
       'react-native$': require.resolve('react-native-web'),
       // Alias internal react-native modules to react-native-web

@@ -15,13 +15,12 @@ export default defineConfig({
             fileName: 'shared-elements',
         },
         rollupOptions: {
-            external: ['react', 'react-dom', 'react-native', 'styled-components'],
+            external: ['react', 'react-dom', 'react-native'],
             output: {
                 globals: {
                     react: 'React',
                     'react-native': "ReactNative",
-                    'react-dom': 'ReactDOM',
-                    'styled-components': 'styled-components',
+                    'react-dom': 'ReactDOM'
                 },
             },
         },
