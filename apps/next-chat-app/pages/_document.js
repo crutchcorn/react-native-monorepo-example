@@ -2,7 +2,7 @@
 // and https://github.com/expo/expo-cli/blob/main/packages/webpack-config/web-default/index.html
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document';
 import * as React from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native-web';
 
 export const style = `
 /**
