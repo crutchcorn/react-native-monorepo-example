@@ -13,7 +13,7 @@ fixReanimatedIssue();
 
 import Head from "next/head";
 import { AppProps } from "next/app";
-// import { ThemeProvider } from "@crutchcorn/shared-elements";
+import { ThemeProvider } from "@crutchcorn/shared-elements";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -26,9 +26,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <ThemeProvider> */}
+      <ThemeProvider>
         <Component {...pageProps} />
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </>
   );
 }

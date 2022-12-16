@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RoundedTextInput } from "@crutchcorn/shared-elements";
+import { View } from "react-native";
 
 export default function App() {
   const [textValue, onTextValueChange] = useState("");
@@ -9,5 +10,6 @@ export default function App() {
       value={textValue}
       onValueChange={onTextValueChange}
     />
+    // <View></View>
   );
 }

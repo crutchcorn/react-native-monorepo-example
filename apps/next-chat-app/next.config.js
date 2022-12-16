@@ -1,5 +1,4 @@
 const withPlugins = require("next-compose-plugins");
-const { resolve } = require("styled-jsx/css");
 const withTM = require("next-transpile-modules")(["react-native-web", "@crutchcorn/shared-elements"]);
 const { DefinePlugin } = require('webpack');
 
