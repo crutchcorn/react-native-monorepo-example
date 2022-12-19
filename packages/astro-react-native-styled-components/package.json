@@ -1,0 +1,37 @@
+{
+  "name": "@crutchcorn/astro-react-native-styled-components",
+  "description": "Use React Native and styled components within Astro",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client.js": "./client.js",
+    "./server.js": "./server.js",
+    "./package.json": "./package.json",
+    "./jsx-runtime": "./jsx-runtime.js"
+  },
+  "dependencies": {
+    "@babel/core": ">=7.0.0-0 <8.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.17.12",
+    "@originjs/vite-plugin-commonjs": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.45",
+    "@types/react-dom": "^17.0.17",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-native": "0.70.3",
+    "styled-components": "^5.3.6"
+  },
+  "peerDependencies": {
+    "@types/react": "^17.0.50 || ^18.0.21",
+    "@types/react-dom": "^17.0.17 || ^18.0.6",
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0",
+    "react-native": "0.70.3",
+    "styled-components": "^5.3.6"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.12.0"
+  }
+}
