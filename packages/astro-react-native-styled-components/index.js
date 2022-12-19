@@ -43,6 +43,16 @@ function getViteConfiguration() {
 			exclude: [
 				'@crutchcorn/astro-react-native-styled-components/server.js'
 			],
+			esbuildOptions:{
+				plugins:[
+				  esbuildCommonjs(['styled-components/native'])
+				]
+			  }
+		},
+		build: {
+			commonjsOptions: {
+				transformMixedEsModules: true,
+			},
 		},
 		resolve: {
 			dedupe: ['react', 'react-dom'],
@@ -59,6 +69,7 @@ function getViteConfiguration() {
 			],
 			noExternal: [
 				'styled-components',
+				'styled-components/native',
 				'@babel/runtime',
 			],
 		},
