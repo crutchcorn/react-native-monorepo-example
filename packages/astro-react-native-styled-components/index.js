@@ -1,4 +1,8 @@
-import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
+import { viteCommonjs, esbuildCommonjs } from "@originjs/vite-plugin-commonjs";
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function getRenderer() {
 	return {
@@ -44,6 +48,7 @@ function getViteConfiguration() {
 			dedupe: ['react', 'react-dom'],
 			alias: {
 				'react-native': 'react-native-web',
+				"@emotion/stylis": path.resolve(__dirname, "stylis-patch.js")
 			},
 		},
 		ssr: {
