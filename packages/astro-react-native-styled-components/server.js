@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/server';
 import StaticHtml from './static-html.js';
 import { ServerStyleSheet } from 'styled-components';
-import { AppRegistry } from 'react-native';
+import reactNative from 'react-native-web';
+const { AppRegistry } = reactNative;
 
 const slotName = (str) => str.trim().replace(/[-_]([a-z])/g, (_, w) => w.toUpperCase());
 const reactTypeof = Symbol.for('react.element');

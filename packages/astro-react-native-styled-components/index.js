@@ -47,7 +47,11 @@ function getViteConfiguration() {
 			},
 		},
 		ssr: {
-			external: ['react-dom/server', 'react-dom/client'],
+			external: [
+				'react-dom/server',
+				'react-dom/client',
+				'@crutchcorn/astro-react-native-styled-components/server.js'
+			],
 			noExternal: [
 				'styled-components',
 				'@babel/runtime',

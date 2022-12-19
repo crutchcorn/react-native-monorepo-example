@@ -2227,6 +2227,7 @@ __metadata:
     react: ^18.1.0
     react-dom: ^18.1.0
     react-native: 0.70.3
+    react-native-web: ^0.18.10
     styled-components: ^5.3.6
   peerDependencies:
     "@types/react": ^17.0.50 || ^18.0.21
