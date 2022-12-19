@@ -58,7 +58,9 @@ function getViteConfiguration() {
 			dedupe: ['react', 'react-dom'],
 			alias: {
 				'react-native': 'react-native-web',
-				"@emotion/stylis": path.resolve(__dirname, "stylis-patch.js")
+				// styled-components/native does not like me :(
+				"@emotion/stylis": path.resolve(__dirname, "stylis-patch.js"),
+				"css-to-react-native": path.resolve(__dirname, "css-to-react-native-patch.js")
 			},
 		},
 		ssr: {
