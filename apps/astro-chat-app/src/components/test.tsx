@@ -6,6 +6,6 @@ const RedText = styled(Text)`
     background: red;
 `;
 
-export const Test = ({ children }: PropsWithChildren<never>) => {
+export const Test = ({ children }: PropsWithChildren<any>) => {
     return <RedText>{children}</RedText>
 }

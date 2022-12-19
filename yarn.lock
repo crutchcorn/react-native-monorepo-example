@@ -2206,6 +2206,8 @@ __metadata:
     "@crutchcorn/astro-react-native-styled-components": "workspace:*"
     "@types/react": ^18.0.26
     "@types/react-dom": ^18.0.9
+    "@types/react-native": ^0.70.8
+    "@types/styled-components-react-native": ^5.2.0
     astro: ^1.7.1
     postcss-safe-parser: ^6.0.0
     react: ^18.2.0
@@ -3548,6 +3550,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:*":
+  version: 3.3.1
+  resolution: "@types/hoist-non-react-statics@npm:3.3.1"
+  dependencies:
+    "@types/react": "*"
+    hoist-non-react-statics: ^3.3.0
+  checksum: 2c0778570d9a01d05afabc781b32163f28409bb98f7245c38d5eaf082416fdb73034003f5825eb5e21313044e8d2d9e1f3fe2831e345d3d1b1d20bcd12270719
+  languageName: node
+  linkType: hard
+
 "@types/html-escaper@npm:^3.0.0":
   version: 3.0.0
   resolution: "@types/html-escaper@npm:3.0.0"
@@ -3757,6 +3769,28 @@ __metadata:
   version: 2.0.1
   resolution: "@types/stack-utils@npm:2.0.1"
   checksum: 205fdbe3326b7046d7eaf5e494d8084f2659086a266f3f9cf00bccc549c8e36e407f88168ad4383c8b07099957ad669f75f2532ed4bc70be2b037330f7bae019
+  languageName: node
+  linkType: hard
+
+"@types/styled-components-react-native@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@types/styled-components-react-native@npm:5.2.0"
+  dependencies:
+    "@types/react": "*"
+    "@types/react-native": "*"
+    "@types/styled-components": "*"
+  checksum: 8181dceaf419a101c46862f593b7cb3f51c5b41b127e1879815d76898ff0f47d9082eaf04d82a4ca80ede2e199dfb9b0b95cb5da0e8bb6bb98f1a8818ba24159
+  languageName: node
+  linkType: hard
+
+"@types/styled-components@npm:*":
+  version: 5.1.26
+  resolution: "@types/styled-components@npm:5.1.26"
+  dependencies:
+    "@types/hoist-non-react-statics": "*"
+    "@types/react": "*"
+    csstype: ^3.0.2
+  checksum: 84f53b3101739b20d1731554fb7735bc2f3f5d050a8b392e9845403c8c8bbd729737d033978649f9195a97b557875b010d46e35a4538564a2d0dbcce661dbf76
   languageName: node
   linkType: hard
 
@@ -8304,7 +8338,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.0.0":
+"hoist-non-react-statics@npm:^3.0.0, hoist-non-react-statics@npm:^3.3.0":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
