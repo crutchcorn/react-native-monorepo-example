@@ -39,6 +39,8 @@ function getViteConfiguration() {
 				'react/jsx-runtime',
 				'react/jsx-dev-runtime',
 				'react-dom',
+				'styled-components',
+				'styled-components/native'
 			],
 			exclude: [
 				'@crutchcorn/astro-react-native-styled-components/server.js'
@@ -55,7 +57,7 @@ function getViteConfiguration() {
 			},
 		},
 		resolve: {
-			dedupe: ['react', 'react-dom'],
+			dedupe: ['react', 'react-dom', 'react-native-web', 'styled-components', 'sytled-components/native'],
 			alias: {
 				'react-native': 'react-native-web',
 				// styled-components/native does not like me :(
@@ -66,8 +68,7 @@ function getViteConfiguration() {
 		ssr: {
 			external: [
 				'react-dom/server',
-				'react-dom/client',
-				'@crutchcorn/astro-react-native-styled-components/server.js'
+				'react-dom/client'
 			],
 			noExternal: [
 				'styled-components',
