@@ -1,4 +1,4 @@
-import { viteCommonjs, esbuildCommonjs } from "@originjs/vite-plugin-commonjs";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import path from 'path';
 import {fileURLToPath} from 'url';
 
@@ -38,18 +38,8 @@ function getViteConfiguration() {
 				'react',
 				'react/jsx-runtime',
 				'react/jsx-dev-runtime',
-				'react-dom',
-				'styled-components',
-				'styled-components/native'
-			],
-			exclude: [
-				'@crutchcorn/astro-react-native-styled-components/server.js'
-			],
-			esbuildOptions:{
-				plugins:[
-				  esbuildCommonjs(['styled-components/native'])
-				]
-			  }
+				'react-dom'
+			]
 		},
 		build: {
 			commonjsOptions: {
@@ -57,7 +47,7 @@ function getViteConfiguration() {
 			},
 		},
 		resolve: {
-			dedupe: ['react', 'react-dom', 'react-native-web', 'styled-components', 'sytled-components/native'],
+			dedupe: ['react', 'react-dom', 'react-native-web', 'styled-components', 'styled-components/native'],
 			alias: {
 				'react-native': 'react-native-web',
 				// styled-components/native does not like me :(

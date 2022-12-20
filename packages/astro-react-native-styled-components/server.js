@@ -91,8 +91,16 @@ async function renderToNodeStream(vnode) {
 	const sheet = new ServerStyleSheet();
 	const jsx = sheet.collectStyles(vnode);
 	AppRegistry.registerComponent('Main', () => vnode);
+	const { getStyleElement } = AppRegistry.getApplication('Main');
 	return new Promise((resolve, reject) => {
-		let stream = sheet.interleaveWithNodeStream(ReactDOM.renderToNodeStream(jsx));
+		let stream = sheet.interleaveWithNodeStream(
+			ReactDOM.renderToNodeStream(
+				React.createElement(React.Fragment, {}, [
+					jsx,
+					getStyleElement()
+				])
+			)
+		);
 		stream.on('error', (err) => {
 			reject(err);
 		});
@@ -103,9 +111,6 @@ async function renderToNodeStream(vnode) {
 					callback();
 				},
 				destroy() {
-					const { getStyleElement } = AppRegistry.getApplication('Main');
-					const css = ReactDOM.renderToStaticMarkup(getStyleElement());
-					html += `<style>${css}</style>`;
 					resolve(html);
 				},
 			})
@@ -119,8 +124,16 @@ async function renderToStaticNodeStream(vnode) {
 	const sheet = new ServerStyleSheet();
 	const jsx = sheet.collectStyles(vnode);
 	AppRegistry.registerComponent('Main', () => vnode);
+	const { getStyleElement } = AppRegistry.getApplication('Main');
 	return new Promise((resolve, reject) => {
-		let stream = sheet.interleaveWithNodeStream(ReactDOM.renderToStaticNodeStream(jsx));
+		let stream = sheet.interleaveWithNodeStream(
+			ReactDOM.renderToStaticNodeStream(
+				React.createElement(React.Fragment, {}, [
+					jsx,
+					getStyleElement()
+				])
+			)
+		);
 		stream.on('error', (err) => {
 			reject(err);
 		});
@@ -131,9 +144,6 @@ async function renderToStaticNodeStream(vnode) {
 					callback();
 				},
 				destroy() {
-					const { getStyleElement } = AppRegistry.getApplication('Main');
-					const css = ReactDOM.renderToStaticMarkup(getStyleElement());
-					html += `<style>${css}</style>`;
 					resolve(html);
 				},
 			})

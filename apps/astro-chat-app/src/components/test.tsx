@@ -7,7 +7,7 @@ import {RoundedTextInput, ThemeProvider} from '@crutchcorn/shared-elements';
 
 const RTextInput =  () => {
     const [value, setValue] = useState('');
-    return <RoundedTextInput placeholder="Pooh" value={value} onValueChange={setValue}/>
+    return <RoundedTextInput placeholder="Hello, friends" value={value} onValueChange={setValue}/>
 }
 
 const RedText = styled(Text)`
