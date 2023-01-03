@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { useColorScheme } from "react-native";
-import { ThemeProvider as StyledThemeProvider } from "styled-components";
+import { ThemeProvider as StyledThemeProvider } from "styled-components/native";
 import { dark, light } from "../constants";
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
