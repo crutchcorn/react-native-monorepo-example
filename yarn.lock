@@ -2221,7 +2221,6 @@ __metadata:
     "@types/react-native": ^0.70.8
     "@types/styled-components-react-native": ^5.2.0
     astro: ^1.7.1
-    postcss-safe-parser: ^6.0.0
     react: ^18.2.0
     react-dom: ^18.2.0
     react-native-web: ^0.18.10
@@ -12865,15 +12864,6 @@ __metadata:
     ts-node:
       optional: true
   checksum: 1c589504c2d90b1568aecae8238ab993c17dba2c44f848a8f13619ba556d26a1c09644d5e6361b5784e721e94af37b604992f9f3dc0483e687a0cc1cc5029a34
-  languageName: node
-  linkType: hard
-
-"postcss-safe-parser@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "postcss-safe-parser@npm:6.0.0"
-  peerDependencies:
-    postcss: ^8.3.3
-  checksum: 06c733eaad83a3954367e7ee02ddfe3796e7a44d4299ccf9239f40964a4daac153c7d77613f32964b5a86c0c6c2f6167738f31d578b73b17cb69d0c4446f0ebe
   languageName: node
   linkType: hard
 
