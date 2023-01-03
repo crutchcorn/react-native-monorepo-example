@@ -9832,6 +9832,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-vue-app@workspace:apps/vite-react-app"
   dependencies:
+    "@crutchcorn/shared-elements": "workspace:*"
     "@jspm/core": "github:jspm/core"
     "@originjs/vite-plugin-commonjs": ^1.0.3
     "@types/react": ^18.0.26
