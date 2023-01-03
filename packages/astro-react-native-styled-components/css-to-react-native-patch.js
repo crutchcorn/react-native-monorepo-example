@@ -1,1 +1,0 @@
-export {default} from "../../apps/astro-chat-app/node_modules/css-to-react-native/index.js"

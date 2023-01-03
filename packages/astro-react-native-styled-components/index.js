@@ -52,9 +52,7 @@ function getViteConfiguration() {
 				'react-native': 'react-native-web',
 				// styled-components/native does not like me :(
 				"postcss-safe-parser": path.resolve(__dirname, "noop.js"),
-				"@emotion/stylis": path.resolve(__dirname, "stylis-patch.js"),
-				"css-to-react-native": path.resolve(__dirname, "css-to-react-native-patch.js")
-			},
+		},
 		},
 		ssr: {
 			external: [
