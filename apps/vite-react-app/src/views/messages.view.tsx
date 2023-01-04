@@ -3,8 +3,11 @@ import React from "react";
 import { Text, View } from "react-native";
 import { useMutation } from "@tanstack/react-query";
 import { addMessage, MessagesUI, useMessages } from "@crutchcorn/shared-elements";
+import { useNavigate } from "react-router-dom";
 
 export const MessagesView = () => {
+  const navigate = useNavigate();
+
   const {
     messages,
     isLoading,
@@ -56,7 +59,9 @@ export const MessagesView = () => {
         mutation.mutate(messageText);
         setMessageText("");
       }}
-      onMenuPress={() => {}}
+      onMenuPress={() => {
+        navigate("/settings");
+      }}
       messageListRef={messageListRef}
     />
   );

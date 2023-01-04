@@ -12,7 +12,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Outlet />}>
               <Route index element={<MessagesView />} />
-              <Route path="other" element={<p>Testing</p>} />
+              <Route path="settings" element={<p>Testing</p>} />
               <Route path="*" element={<p>There is nothing here 404</p>} />
             </Route>
           </Routes>
