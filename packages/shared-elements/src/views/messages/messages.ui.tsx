@@ -7,7 +7,7 @@ import { HeaderBar } from "../../components/header-bar";
 import { UserMessage } from "../../types/message";
 import { MessagesUIContainer } from "./messages.styles";
 
-interface MessagesUIProps {
+export interface MessagesUIProps {
   messages: UserMessage[];
   messageText: string;
   setMessageText: (val: string) => void;
