@@ -26,7 +26,29 @@ jest.mock(
   }
 );
 
+
+// Styled components has a _weird_ way of exporting their native components
+jest.mock(
+  "styled-components/native",
+  () => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const SC = jest.requireActual("styled-components/native");
+    return Object.assign(SC.default, SC);
+  }
+);
+
 jest.mock("react-native/Libraries/EventEmitter/NativeEventEmitter");
+jest.mock("react-native-vector-icons/MaterialIcons", () => {
+  const RN = require("react-native");
+
+  return RN.View;
+});
+
+jest.mock("react-native-vector-icons/MaterialCommunityIcons", () => {
+  const RN = require("react-native");
+
+  return RN.View;
+});
 
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
