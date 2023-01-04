@@ -26,6 +26,7 @@ export default defineConfig({
         "dayjs",
         "react-native-vector-icons",
         "react-native-vector-icons/MaterialIcons",
+        "react-native-vector-icons/MaterialCommunityIcons",
         "@tanstack/react-query",
         "@react-native-async-storage/async-storage"
       ],

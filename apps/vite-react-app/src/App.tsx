@@ -1,7 +1,8 @@
 import { ThemeProvider } from "@crutchcorn/shared-elements";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { MessagesView } from "./views/messages.view";
+import { MessagesView } from "./views/messages/messages.view";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { SettingsView } from "./views/settings/settings.view";
 const queryClient = new QueryClient();
 
 export const App = () => {
@@ -12,7 +13,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Outlet />}>
               <Route index element={<MessagesView />} />
-              <Route path="settings" element={<p>Testing</p>} />
+              <Route path="settings" element={<SettingsView/>} />
               <Route path="*" element={<p>There is nothing here 404</p>} />
             </Route>
           </Routes>

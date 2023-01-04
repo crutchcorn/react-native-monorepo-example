@@ -1,5 +1,5 @@
 import { Image, Text, View } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const SettingsUIContainer = styled(View)`
     background: ${props => props.theme.background_primary};

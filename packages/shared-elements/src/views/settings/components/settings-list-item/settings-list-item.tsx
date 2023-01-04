@@ -1,7 +1,7 @@
 import React from "react";
 import { IconContainer, SettingName, SettingsListHighlight, SettingsListItemContainer } from "./settings-list-item.styles";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { useTheme } from "@crutchcorn/shared-elements";
+import { useTheme } from "../../../../hooks";
 
 export interface SettingsListItemProps {
     name: string;
