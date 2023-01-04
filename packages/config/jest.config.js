@@ -19,6 +19,7 @@ module.exports = {
       "<rootDir>/node_modules/react-native/Libraries/EventEmitter/NativeEventEmitter",
     "^react-native$": "<rootDir>/node_modules/react-native",
     "^react$": "<rootDir>/node_modules/react",
+    "^@tanstack/react-query$": "<rootDir>/node_modules/@tanstack/react-query",
   },
   setupFiles: [path.resolve(__dirname, "./jest/setup-files.js")],
   setupFilesAfterEnv: [

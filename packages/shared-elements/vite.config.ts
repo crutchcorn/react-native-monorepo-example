@@ -21,6 +21,7 @@ export default defineConfig({
         "react",
         "react-dom",
         "react-native",
+        "react/jsx-runtime",
         "styled-components",
         "styled-components/native",
         "dayjs",
