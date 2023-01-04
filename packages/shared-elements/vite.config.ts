@@ -24,7 +24,6 @@ export default defineConfig({
         "styled-components",
         "styled-components/native",
         "dayjs",
-        "react-native-get-random-values",
         "react-native-vector-icons",
         "react-native-vector-icons/MaterialIcons",
         "@tanstack/react-query",

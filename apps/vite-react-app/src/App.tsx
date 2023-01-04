@@ -1,45 +1,14 @@
-import { useState } from "react";
-import type { PropsWithChildren } from "react";
-import { Text, View } from "react-native";
-import styled from "styled-components/native";
+import { ThemeProvider } from "@crutchcorn/shared-elements";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { MessagesView } from "./views/messages.view";
+const queryClient = new QueryClient();
 
-import { RoundedTextInput, ThemeProvider } from "@crutchcorn/shared-elements";
-
-const RTextInput = () => {
-  const [value, setValue] = useState("");
-  return (
-    <RoundedTextInput
-      placeholder="Hello, friends"
-      value={value}
-      onValueChange={setValue}
-    />
-  );
-};
-
-const RedText = styled(Text)`
-  background: red;
-`;
-
-const TextInputContainer = styled(View)`
-    display: flex;
-    flex-direction: row;
-`
-
-export const Test = ({ children }: PropsWithChildren<any>) => {
+export const App = () => {
   return (
     <ThemeProvider>
-      <View>
-        <RedText>{children}</RedText>
-      </View>
-      <TextInputContainer>
-        <RTextInput />
-      </TextInputContainer>
+      <QueryClientProvider client={queryClient}>
+        <MessagesView/>
+      </QueryClientProvider>
     </ThemeProvider>
   );
 };
-
-const App = () => {
-  return <Test>Testing 123</Test>
-}
-
-export default App;
