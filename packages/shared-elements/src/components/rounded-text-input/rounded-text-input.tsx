@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "../../hooks";
 import { MessageInput } from "./rounded-text-input.styles";
 
-interface RoundedTextInputProps {
+export interface RoundedTextInputProps {
   placeholder: string;
   value: string;
   onValueChange: (val: string) => void;
