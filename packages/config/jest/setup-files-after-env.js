@@ -12,6 +12,10 @@ import "@testing-library/jest-native/extend-expect";
  */
 import * as mockAsyncStorage from "@react-native-async-storage/async-storage/jest/async-storage-mock";
 
+import { Crypto } from "@peculiar/webcrypto"
+
+global.crypto = new Crypto()
+
 jest.mock("@react-native-async-storage/async-storage", () => mockAsyncStorage);
 
 jest.mock(
