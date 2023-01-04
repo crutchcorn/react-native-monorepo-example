@@ -4,6 +4,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import { useTheme } from "../../../../hooks";
 
 export interface SettingsListItemProps {
+    id: string;
     name: string;
     onPress?: () => void;
     icon: string;

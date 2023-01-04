@@ -1,19 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { ScrollView } from "react-native";
 import { SettingsListItem, SettingsListItemProps } from "./components";
 import { ListDivider, ListSubheader, SettingsUIContainer, UserHeaderContainer, UsernameText, UserProfilePicture } from "./settings.styles";
 import { HeaderBar } from "../../components/header-bar";
 
-interface SettingsListItem {
-    icon: string;
-    name: string;
-    IconComponent?: SettingsListItemProps['IconComponent']
-    onPress?: () => void;
-}
-
 interface SettingsGroup {
+    id: string;
     groupName: string;
-    listItems: SettingsListItem[];
+    listItems: SettingsListItemProps[];
 }
 
 interface SettingsUIProps {
@@ -40,13 +34,13 @@ export const SettingsUI = ({ goBack, username, profilePicture, settingsGroups }:
                     settingsGroups.map((settingsGroup, i) => {
                         const isFirst = i === 0;
                         return (
-                            <>
+                            <Fragment key={settingsGroup.id}>
                                 {!isFirst && <ListDivider />}
                                 <ListSubheader>{settingsGroup.groupName}</ListSubheader>
                                 {settingsGroup.listItems.map(listItem =>
-                                    <SettingsListItem IconComponent={listItem.IconComponent} icon={listItem.icon} onPress={listItem.onPress} name={listItem.name} />
+                                    <SettingsListItem key={listItem.id} id={listItem.id} IconComponent={listItem.IconComponent} icon={listItem.icon} onPress={listItem.onPress} name={listItem.name} />
                                 )}
-                            </>
+                            </Fragment>
                         )
                     })
                 }
