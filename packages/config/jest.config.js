@@ -20,9 +20,12 @@ module.exports = {
     "^react-native$": "<rootDir>/node_modules/react-native",
     "^react$": "<rootDir>/node_modules/react",
     "^@tanstack/react-query$": "<rootDir>/node_modules/@tanstack/react-query",
-    "^styled-components/native$": "<rootDir>/node_modules/styled-components/native",
-    "^react-native-vector-icons/MaterialIcons$": "<rootDir>/node_modules/react-native-vector-icons/MaterialIcons",
-    "^react-native-vector-icons/MaterialCommunityIcons$": "<rootDir>/node_modules/react-native-vector-icons/MaterialCommunityIcons"
+    "^styled-components/native$":
+      "<rootDir>/node_modules/styled-components/native",
+    "^react-native-vector-icons/MaterialIcons$":
+      "<rootDir>/node_modules/react-native-vector-icons/MaterialIcons",
+    "^react-native-vector-icons/MaterialCommunityIcons$":
+      "<rootDir>/node_modules/react-native-vector-icons/MaterialCommunityIcons",
   },
   setupFiles: [path.resolve(__dirname, "./jest/setup-files.js")],
   setupFilesAfterEnv: [
