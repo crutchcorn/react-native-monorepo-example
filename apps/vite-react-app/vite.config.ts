@@ -2,9 +2,26 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import * as path from 'path';
+import copy from "rollup-plugin-copy";
 
 export default defineConfig({
-  plugins: [react(), viteCommonjs()],
+  plugins: [
+    react(),
+    viteCommonjs(),
+    {
+      ...copy({
+        hook: "options",
+        flatten: true,
+        targets: [
+          {
+            src: "node_modules/react-native-vector-icons/Fonts/*",
+            dest: "public/fonts",
+          },
+        ],
+      }),
+      enforce: "pre",
+    },
+  ],
   optimizeDeps: {
     // Needed for react-native-icons
     esbuildOptions: {
