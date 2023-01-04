@@ -11,12 +11,14 @@
         "tsc": "tsc --noEmit"
     },
     "peerDependencies": {
+        "@tanstack/react-query": "^4.20.4",
         "dayjs": "^1.11.7",
         "react": "18.1.0",
         "react-native": "0.70.3",
         "react-native-get-random-values": "^1.8.0",
         "react-native-vector-icons": "^9.2.0",
-        "styled-components": "^5.3.6"
+        "styled-components": "^5.3.6",
+        "@react-native-async-storage/async-storage": "^1.17.10"
     },
     "devDependencies": {
         "@babel/core": "^7.12.9",
@@ -25,6 +27,7 @@
         "@react-native-async-storage/async-storage": "^1.17.10",
         "@react-navigation/native": "^6.0.13",
         "@react-navigation/stack": "^6.3.2",
+        "@tanstack/react-query": "^4.20.4",
         "@testing-library/react-native": "^11.2.0",
         "@types/react-native": "0.70.4",
         "@types/react-native-vector-icons": "^6.4.12",
@@ -46,18 +49,22 @@
     "files": [
         "dist"
     ],
+    "main": "./dist/shared-elements-cjs.js",
+    "module": "./dist/shared-elements-es.js",
+    "react-native": "./dist/shared-elements-es.js",
     "exports": {
         ".": {
             "import": "./dist/shared-elements-es.js",
             "require": "./dist/shared-elements-cjs.js",
-            "polyfills": {
-                "import": "./dist/polyfills-es.js",
-                "require": "./dist/polyfills-cjs.js"
-            }
+            "types": "./dist/index.d.ts"
+        },
+        "./polyfills": {
+            "import": "./dist/polyfills-es.js",
+            "require": "./dist/polyfills-cjs.js",
+            "types": "./dist/polyfills.d.ts"
         }
     },
     "dependencies": {
-        "@tanstack/react-query": "^4.20.4",
         "@types/uuid": "^9.0.0",
         "uuid": "^9.0.0"
     }

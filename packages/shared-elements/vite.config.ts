@@ -26,7 +26,9 @@ export default defineConfig({
         "dayjs",
         "react-native-get-random-values",
         "react-native-vector-icons",
-        "react-native-vector-icons/MaterialIcons"
+        "react-native-vector-icons/MaterialIcons",
+        "@tanstack/react-query",
+        "@react-native-async-storage/async-storage"
       ],
       output: {
         globals: {

@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { viteCommonjs, esbuildCommonjs } from "@originjs/vite-plugin-commonjs";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import * as path from 'path';
 
 export default defineConfig({
   plugins: [react(), viteCommonjs()],
   optimizeDeps: {
+    // Needed for react-native-icons
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
     include: [
       'react',
       'react/jsx-runtime',
@@ -16,6 +22,7 @@ export default defineConfig({
     ],
   },
   build: {
+    // Needed for styled-components/native
     commonjsOptions: {
       transformMixedEsModules: true
     },
@@ -24,6 +31,7 @@ export default defineConfig({
     dedupe: ['react', 'react-dom', 'react-native-web', 'styled-components', 'styled-components/native'],
     alias: {
       'react-native': 'react-native-web',
+      // Needed for styled-components/native
       "postcss-safe-parser": path.resolve(process.cwd(), "config", "noop.js"),
     },
   },

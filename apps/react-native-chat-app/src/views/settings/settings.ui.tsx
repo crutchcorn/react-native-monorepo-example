@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import { HeaderBar } from "../../components/header-bar";
 import { SettingsListItem, SettingsListItemProps } from "./components";
 import { ListDivider, ListSubheader, SettingsUIContainer, UserHeaderContainer, UsernameText, UserProfilePicture } from "./settings.styles";
+import { HeaderBar } from "@crutchcorn/shared-elements";
 
 interface SettingsListItem {
     icon: string;

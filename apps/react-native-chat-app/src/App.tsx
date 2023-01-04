@@ -6,7 +6,7 @@ import { MessagesView } from "./views/messages/messages.view";
 import { SettingsView } from "./views/settings/settings.view";
 import { RootStack } from "./navigators/root";
 import { ThemeProvider } from "@crutchcorn/shared-elements";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 const queryClient = new QueryClient();
 

@@ -1,5 +1,5 @@
 import { View, TouchableHighlight } from "react-native";
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components/native";
 
 export const BottomBarContainer = styled(View)`
   display: flex;

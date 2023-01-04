@@ -26,32 +26,22 @@ module.exports = (__dirname) => {
     },
     resolver: {
       resolveRequest: (context, moduleName, platform) => {
-        if (moduleName === "react") {
-          return {
-            filePath: path.resolve(
-              path.join(__dirname, "./node_modules/react/index.js")
-            ),
-            type: "sourceFile",
-          };
-        }
-        if (moduleName === "react-native") {
-          return {
-            filePath: path.resolve(
-              path.join(__dirname, "./node_modules/react-native/index.js")
-            ),
-            type: "sourceFile",
-          };
-        }
-        if (moduleName === "styled-components") {
-          return {
-            filePath: path.resolve(
-              path.join(
-                __dirname,
-                "./node_modules/styled-components/native/dist/styled-components.native.cjs.js"
-              )
-            ),
-            type: "sourceFile",
-          };
+        if (
+          moduleName.startsWith("react") ||
+          moduleName.startsWith("@react-navigation") ||
+          moduleName.startsWith("@react-native") ||
+          moduleName.startsWith("@react-native-community") ||
+          moduleName.startsWith("@tanstack") ||
+          moduleName.startsWith("styled-components") ||
+          moduleName.startsWith("@redux") ||
+          moduleName.startsWith("redux")
+        ) {
+          const pathToResolve = path.resolve(
+            __dirname,
+            "node_modules",
+            moduleName
+          );
+          return context.resolveRequest(context, pathToResolve, platform);
         }
         // Optionally, chain to the standard Metro resolver.
         return context.resolveRequest(context, moduleName, platform);
