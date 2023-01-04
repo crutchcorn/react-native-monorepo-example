@@ -1,4 +1,4 @@
-import { useWindowDimensions } from "react-native";
+import { Platform, useWindowDimensions } from "react-native";
 import { useMemo } from "react";
 
 export const useDimensions = () => {
@@ -6,11 +6,18 @@ export const useDimensions = () => {
 
   const isDesktop = useMemo(() => width > 768, [width]);
 
+  const isWeb = useMemo(() => Platform.OS === 'web', []);
+  const isiOS = useMemo(() => Platform.OS === 'ios', []);
+  const isAndroid = useMemo(() => Platform.OS === 'android', []);
+
   return {
     height,
     width,
     fontScale,
     scale,
-    isDesktop
+    isDesktop,
+    isWeb,
+    isiOS,
+    isAndroid
   }
 }
