@@ -1,5 +1,5 @@
 import { Text, TouchableHighlight, View } from 'react-native';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const SettingsListHighlight = styled(TouchableHighlight)`
     padding: 16px;
