@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { RoundedTextInput, useTheme } from "@crutchcorn/shared-elements";
+import { useTheme } from "../../hooks";
+import { RoundedTextInput } from "../rounded-text-input";
 import {
   BottomBarContainer,
   AddMoreButton,

@@ -1,11 +1,10 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import React from "react";
 
-import { addMessage, loadMessages } from "../../services/messages";
-import { MessagesUI } from "./messages.ui";
-import { ScrollView, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
+import { useMutation } from "@tanstack/react-query";
+import { addMessage, MessagesUI, useMessages } from "@crutchcorn/shared-elements";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");
@@ -13,23 +12,14 @@ const crutchcornPicture = require("../../assets/crutchcorn.jpg");
 export const MessagesView = () => {
   const navigation = useNavigation<RootScreenProps<"Messages">>();
 
-  const messageListRef = useRef<ScrollView>(null);
-
   const {
-    data: messages,
+    messages,
     isLoading,
     refetch,
-  } = useQuery(
-    ["messages"],
-    () => {
-      return loadMessages();
-    },
-    {
-      onSuccess: () => {
-        messageListRef.current?.scrollToEnd?.();
-      },
-    }
-  );
+    messageText,
+    setMessageText,
+    messageListRef
+  } = useMessages();
 
   const mutation = useMutation(
     (newMessage: string) => {
@@ -44,8 +34,6 @@ export const MessagesView = () => {
       onSuccess: () => refetch(),
     }
   );
-
-  const [messageText, setMessageText] = useState("");
 
   // TODO: Make this nicer
   if (mutation.isError) {

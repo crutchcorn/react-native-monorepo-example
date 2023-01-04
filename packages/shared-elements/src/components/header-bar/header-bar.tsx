@@ -1,4 +1,4 @@
-import { useTheme } from "@crutchcorn/shared-elements";
+import { useTheme } from "../../hooks";
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ThemeProvider } from "@crutchcorn/shared-elements";
+import { ThemeProvider } from "../../components/theme-provider";
 import { fireEvent, render } from "@testing-library/react-native";
 import { MessagesView } from "./messages.view";
 import { NavigationContainer } from "@react-navigation/native";

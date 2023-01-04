@@ -1,5 +1,6 @@
 import react from "@vitejs/plugin-react";
 import path from "node:path";
+import fs from 'node:fs';
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
@@ -7,9 +8,12 @@ export default defineConfig({
   plugins: [react(), dts()],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.tsx"),
+      entry: {
+        'shared-elements': path.resolve(__dirname, "src/index.tsx"),
+        polyfills: path.resolve(__dirname, "src/polyfills.ts"),
+      },
       name: "SharedElements",
-      fileName: "shared-elements",
+      fileName: (format, entryName) => `${entryName}-${format}.js`,
       formats: ["es", "cjs"],
     },
     rollupOptions: {
@@ -19,14 +23,16 @@ export default defineConfig({
         "react-native",
         "styled-components",
         "styled-components/native",
+        "dayjs",
+        "react-native-get-random-values",
+        "react-native-vector-icons",
+        "react-native-vector-icons/MaterialIcons"
       ],
       output: {
         globals: {
           react: "React",
           "react-native": "ReactNative",
-          "react-dom": "ReactDOM",
-          "styled-components": "styled-components",
-          "styled-components/native": "styled-components/native",
+          "react-dom": "ReactDOM"
         },
       },
     },
