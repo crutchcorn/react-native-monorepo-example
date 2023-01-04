@@ -5,7 +5,7 @@ import { RoundedTextInput } from "./rounded-text-input";
 import { ThemeProvider } from "../theme-provider";
 
 export default {
-  title: 'RoundedTextInput',
+  title: 'Components/RoundedTextInput',
   component: RoundedTextInput
 } as ComponentMeta<typeof RoundedTextInput>;
 
