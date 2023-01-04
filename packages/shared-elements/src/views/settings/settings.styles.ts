@@ -1,9 +1,9 @@
-import { Image, Text, View } from 'react-native';
-import styled from 'styled-components/native';
+import { Image, Text, View } from "react-native";
+import styled from "styled-components/native";
 
 export const SettingsUIContainer = styled(View)`
-    background: ${props => props.theme.background_primary};
-    flex: 1;
+  background: ${(props) => props.theme.background_primary};
+  flex: 1;
 `;
 
 export const UserHeaderContainer = styled(View)`
@@ -13,28 +13,28 @@ export const UserHeaderContainer = styled(View)`
 `;
 
 export const UserProfilePicture = styled(Image)`
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
-    margin-bottom: 8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  margin-bottom: 8px;
 `;
 
 export const UsernameText = styled(Text)`
-    color: ${props => props.theme.foreground_secondary};
-    font-size: 14px;
+  color: ${(props) => props.theme.foreground_secondary};
+  font-size: 14px;
 `;
 
 export const ListSubheader = styled(Text)`
-    padding: 12px 16px;
-    color: ${props => props.theme.foreground_secondary};
-    font-weight: 600;
-    font-size: 11px;
-`
+  padding: 12px 16px;
+  color: ${(props) => props.theme.foreground_secondary};
+  font-weight: 600;
+  font-size: 11px;
+`;
 
 export const ListDivider = styled(View)`
-    margin-top: 8px;
-    height: 1px;
-    width: 100%;
-    margin-bottom: 8px;
-    background: ${props => props.theme.divider};
-`
+  margin-top: 8px;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 8px;
+  background: ${(props) => props.theme.divider};
+`;

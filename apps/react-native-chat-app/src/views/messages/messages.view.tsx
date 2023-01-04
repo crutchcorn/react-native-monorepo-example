@@ -4,7 +4,11 @@ import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
 import { useMutation } from "@tanstack/react-query";
-import { addMessage, MessagesUI, useMessages } from "@crutchcorn/shared-elements";
+import {
+  addMessage,
+  MessagesUI,
+  useMessages,
+} from "@crutchcorn/shared-elements";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");
@@ -18,7 +22,7 @@ export const MessagesView = () => {
     refetch,
     messageText,
     setMessageText,
-    messageListRef
+    messageListRef,
   } = useMessages();
 
   const mutation = useMutation(

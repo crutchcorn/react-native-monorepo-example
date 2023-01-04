@@ -1,2 +1,2 @@
 export * from "./use-theme";
-export * from './use-dimentions';
+export * from "./use-dimentions";

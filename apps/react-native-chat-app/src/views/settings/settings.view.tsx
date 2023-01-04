@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
 import { SettingsUI, useSettings } from "@crutchcorn/shared-elements";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");
 
 export const SettingsView = () => {
@@ -9,6 +10,12 @@ export const SettingsView = () => {
 
   const { settingsGroups } = useSettings();
 
-  return <SettingsUI goBack={navigation.goBack} username={"crutchcorn"} profilePicture={crutchcornPicture}
-                     settingsGroups={settingsGroups} />;
+  return (
+    <SettingsUI
+      goBack={navigation.goBack}
+      username={"crutchcorn"}
+      profilePicture={crutchcornPicture}
+      settingsGroups={settingsGroups}
+    />
+  );
 };

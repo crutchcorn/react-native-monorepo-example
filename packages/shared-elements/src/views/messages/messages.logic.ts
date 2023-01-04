@@ -30,6 +30,6 @@ export const useMessages = () => {
     refetch,
     messageText,
     setMessageText,
-    messageListRef
-  }
-}
+    messageListRef,
+  };
+};

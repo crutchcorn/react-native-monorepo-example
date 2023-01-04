@@ -25,13 +25,25 @@ export const HeaderBar = ({
   const theme = useTheme();
   return (
     <HeaderBarContainer>
-      {iconNameLeft && <IconButton onPress={onLeftIconPress}>
-        <Icon name={iconNameLeft} size={24} color={theme.foreground_tertiary} />
-      </IconButton>}
+      {iconNameLeft && (
+        <IconButton onPress={onLeftIconPress}>
+          <Icon
+            name={iconNameLeft}
+            size={24}
+            color={theme.foreground_tertiary}
+          />
+        </IconButton>
+      )}
       <HeaderText>{headerTitle}</HeaderText>
-      {iconNameRight && <IconButton onPress={onRightIconPress}>
-        <Icon name={iconNameRight} size={20} color={theme.foreground_tertiary} />
-      </IconButton>}
+      {iconNameRight && (
+        <IconButton onPress={onRightIconPress}>
+          <Icon
+            name={iconNameRight}
+            size={20}
+            color={theme.foreground_tertiary}
+          />
+        </IconButton>
+      )}
     </HeaderBarContainer>
   );
 };
