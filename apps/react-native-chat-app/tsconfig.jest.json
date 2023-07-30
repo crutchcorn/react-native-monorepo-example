@@ -1,3 +1,4 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@crutchcorn/config/tsconfig.jest.json"
 }

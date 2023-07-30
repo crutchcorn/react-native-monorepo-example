@@ -1,3 +1,7 @@
 {
-  "extends": "@crutchcorn/config/tsconfig.json"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@crutchcorn/config/tsconfig.json",
+  "compilerOptions": {
+    "types": ["react-native", "jest"]
+  }
 }

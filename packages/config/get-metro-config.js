@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 
 /**
  * @param {string} __dirname
@@ -15,15 +16,13 @@ module.exports = (__dirname) => {
     path.resolve(path.join(__dirname, "./node_modules")),
   ];
 
-  return {
-    transformer: {
-      getTransformOptions: async () => ({
-        transform: {
-          experimentalImportSupport: true,
-          inlineRequires: true,
-        },
-      }),
-    },
+  /**
+   * Metro configuration
+   * https://facebook.github.io/metro/docs/configuration
+   *
+   * @type {import('metro-config').MetroConfig}
+   */
+  return mergeConfig(getDefaultConfig(__dirname), {
     resolver: {
       resolveRequest: (context, moduleName, platform) => {
         if (
@@ -49,5 +48,5 @@ module.exports = (__dirname) => {
       nodeModulesPaths,
     },
     watchFolders,
-  };
+  });
 };

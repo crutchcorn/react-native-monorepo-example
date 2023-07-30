@@ -28,7 +28,6 @@
     "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
-    "@types/react-native": "0.70.8",
     "@vitejs/plugin-react": "^4.0.3",
     "postcss": "^8.4.27",
     "process": "^0.11.10",

@@ -18,8 +18,10 @@
   ],
   "devDependencies": {
     "@peculiar/webcrypto": "^1.4.3",
+    "@react-native/metro-config": "^0.72.9",
     "@testing-library/jest-native": "^5.4.2",
-    "react-native": "0.70.3",
+    "@tsconfig/react-native": "^3.0.0",
+    "react-native": "0.72.3",
     "typescript": "^5.1.6",
     "vite": "^4.4.7"
   }
