@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
 
 /**
  * @param {string} __dirname

@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import React, { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
 
-import { ThemeProvider } from '../../components/theme-provider';
-import { MessagesUI } from './messages.ui';
-import '../../polyfills';
+import { ThemeProvider } from "../../components/theme-provider";
+import { MessagesUI } from "./messages.ui";
+import "../../polyfills";
 
 export default {
-  title: 'Views/Messages',
+  title: "Views/Messages",
   component: MessagesUI,
 } as Meta<typeof MessagesUI>;
 
 const Template: StoryFn<typeof MessagesUI> = (_args) => {
-  const [messageText, setMessageText] = useState('');
+  const [messageText, setMessageText] = useState("");
 
   const messages = [
     {
-      profilePicture: 'https://avatars.githubusercontent.com/u/9100169',
-      username: 'crutchcorn',
+      profilePicture: "https://avatars.githubusercontent.com/u/9100169",
+      username: "crutchcorn",
       date: new Date(),
-      message: 'Hello, world',
-      id: '1',
+      message: "Hello, world",
+      id: "1",
     },
   ];
 
@@ -31,7 +31,7 @@ const Template: StoryFn<typeof MessagesUI> = (_args) => {
         messageText={messageText}
         setMessageText={setMessageText}
         onMenuPress={() => {}}
-        onSendPress={() => setMessageText('')}
+        onSendPress={() => setMessageText("")}
       />
     </ThemeProvider>
   );

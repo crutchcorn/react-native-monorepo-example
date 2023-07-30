@@ -7,9 +7,9 @@ export const SettingsUIContainer = styled(View)`
 `;
 
 export const UserHeaderContainer = styled(View)`
-    padding-top: 24px;
-    padding-bottom: 16px;
-    align-items: center;
+  padding-top: 24px;
+  padding-bottom: 16px;
+  align-items: center;
 `;
 
 export const UserProfilePicture = styled(Image)`
