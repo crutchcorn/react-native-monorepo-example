@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: { }
+
+permissions: read-all
+
+concurrency:
+  # Group concurrency on workflow, then:
+  # - Is merge run? Group on branch name (`refs/heads/main`)
+  # - Is pull request? Group on pull request branch name, for example `feat/add-awesome-feature`
+  group: >-
+    ${{ github.workflow }}-${{
+      github.event_name == 'push'
+        && github.ref
+        || github.head_ref
+    }}
+  # Run merge workflows in sequence to prevent parallel deployments and releases
+  # Cancel stale pull request runs in progress for the same branch
+  cancel-in-progress: ${{ github.event_name != 'push' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Check against TypeScript build
+        run: yarn tsc
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run linter
+        run: yarn lint
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run tests
+        run: yarn test
