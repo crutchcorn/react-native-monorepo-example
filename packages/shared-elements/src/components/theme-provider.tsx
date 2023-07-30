@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const theme = isDarkMode ? dark : light;
   const styledTheme = useMemo(
     () => ({ ...theme, ...dimensions }),
-    [theme, dimensions]
+    [theme, dimensions],
   );
   return (
     <StyledThemeProvider theme={styledTheme}>

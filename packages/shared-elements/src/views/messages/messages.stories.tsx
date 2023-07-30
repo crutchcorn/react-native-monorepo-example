@@ -19,24 +19,23 @@ const Template: ComponentStory<typeof MessagesUI> = (args) => {
       username: "crutchcorn",
       date: new Date(),
       message: "Hello, world",
-      id: "1"
-    }
-  ]
+      id: "1",
+    },
+  ];
 
   return (
     <ThemeProvider>
-        <MessagesUI
-          messages={messages}
-          messageListRef={React.createRef()}
-          messageText={messageText}
-          setMessageText={setMessageText}
-          onMenuPress={() => {}}
-          onSendPress={() => setMessageText("")}
-        />
+      <MessagesUI
+        messages={messages}
+        messageListRef={React.createRef()}
+        messageText={messageText}
+        setMessageText={setMessageText}
+        onMenuPress={() => {}}
+        onSendPress={() => setMessageText("")}
+      />
     </ThemeProvider>
   );
 };
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};

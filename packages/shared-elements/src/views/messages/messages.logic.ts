@@ -19,7 +19,7 @@ export const useMessages = () => {
       onSuccess: () => {
         messageListRef.current?.scrollToEnd?.();
       },
-    }
+    },
   );
 
   const [messageText, setMessageText] = useState("");

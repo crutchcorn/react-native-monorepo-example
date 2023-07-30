@@ -6,7 +6,7 @@ const path = require("path");
  */
 module.exports = (__dirname) => {
   const packagesWorkspace = path.resolve(
-    path.join(__dirname, "../../packages")
+    path.join(__dirname, "../../packages"),
   );
 
   const watchFolders = [packagesWorkspace];
@@ -39,7 +39,7 @@ module.exports = (__dirname) => {
           const pathToResolve = path.resolve(
             __dirname,
             "node_modules",
-            moduleName
+            moduleName,
           );
           return context.resolveRequest(context, pathToResolve, platform);
         }

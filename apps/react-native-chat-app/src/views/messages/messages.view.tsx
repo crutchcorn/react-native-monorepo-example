@@ -36,7 +36,7 @@ export const MessagesView = () => {
     },
     {
       onSuccess: () => refetch(),
-    }
+    },
   );
 
   // TODO: Make this nicer

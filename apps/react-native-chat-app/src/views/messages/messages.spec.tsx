@@ -26,7 +26,7 @@ const renderMessagesPage = () => {
           </RootStack.Navigator>
         </ThemeProvider>
       </NavigationContainer>
-    </QueryClientProvider>
+    </QueryClientProvider>,
   );
 };
 
