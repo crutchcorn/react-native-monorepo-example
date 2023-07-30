@@ -10,33 +10,31 @@
   },
   "dependencies": {
     "@crutchcorn/shared-elements": "workspace:*",
-    "@react-native-async-storage/async-storage": "^1.17.10",
-    "@tanstack/react-query": "^4.20.4",
-    "dayjs": "^1.11.7",
+    "@react-native-async-storage/async-storage": "^1.19.1",
+    "@tanstack/react-query": "^4.32.0",
+    "dayjs": "^1.11.9",
     "path-browserify": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-native-get-random-values": "^1.8.0",
-    "react-native-vector-icons": "^9.2.0",
-    "react-native-web": "^0.18.10",
-    "react-router-dom": "^6.6.1",
-    "styled-components": "^5.3.6"
+    "react-native-get-random-values": "^1.9.0",
+    "react-native-vector-icons": "^10.0.0",
+    "react-native-web": "^0.19.7",
+    "react-router-dom": "^6.14.2",
+    "styled-components": "^6.0.5"
   },
   "devDependencies": {
     "@crutchcorn/config": "workspace:*",
     "@jspm/core": "github:jspm/core",
     "@originjs/vite-plugin-commonjs": "^1.0.3",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
     "@types/react-native": "0.70.8",
-    "@types/styled-components": "5.1.26",
-    "@types/styled-components-react-native": "5.2.0",
-    "@vitejs/plugin-react": "^3.0.0",
-    "postcss": "^8.4.20",
+    "@vitejs/plugin-react": "^4.0.3",
+    "postcss": "^8.4.27",
     "process": "^0.11.10",
     "rollup-plugin-copy": "^3.4.0",
     "source-map-js": "^1.0.2",
-    "typescript": "^4.9.3",
-    "vite": "^4.0.0"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.7"
   }
 }
