@@ -10,6 +10,10 @@ export const MessageListContainer = styled(View)`
   flex-grow: 1;
 `;
 
-export const MessageContainer = styled(View)`
+interface MessageContainerProps {
+  isFirst: boolean;
+}
+
+export const MessageContainer = styled(View)<MessageContainerProps>`
   ${(props) => (props.isFirst ? "" : "margin-top: 18px;")}
 `;

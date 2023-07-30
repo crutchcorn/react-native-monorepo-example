@@ -26,7 +26,13 @@ export const Message = ({ message }: MessageProps) => {
 
   return (
     <MessageContainer>
-      <ProfilePicture source={message.profilePicture} />
+      <ProfilePicture
+        source={
+          typeof message.profilePicture === "string"
+            ? { uri: message.profilePicture }
+            : message.profilePicture
+        }
+      />
       <MessageTextContainer>
         <MessageHeaderContainer>
           <Username numberOfLines={1}>{message.username}</Username>

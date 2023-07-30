@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { ScrollView } from "react-native";
+import { ImageSourcePropType, ScrollView } from "react-native";
 import { SettingsListItem, SettingsListItemProps } from "./components";
 import {
   ListDivider,
@@ -20,7 +20,7 @@ interface SettingsGroup {
 interface SettingsUIProps {
   goBack: () => void;
   username: string;
-  profilePicture: string;
+  profilePicture: string | ImageSourcePropType;
   settingsGroups: SettingsGroup[];
 }
 
@@ -39,7 +39,13 @@ export const SettingsUI = ({
       />
       <ScrollView style={{ flex: 1 }}>
         <UserHeaderContainer>
-          <UserProfilePicture source={profilePicture} />
+          <UserProfilePicture
+            source={
+              typeof profilePicture === "string"
+                ? { uri: profilePicture }
+                : profilePicture
+            }
+          />
           <UsernameText>{username}</UsernameText>
         </UserHeaderContainer>
         {settingsGroups.map((settingsGroup, i) => {
