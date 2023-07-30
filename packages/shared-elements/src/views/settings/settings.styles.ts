@@ -7,7 +7,7 @@ export const SettingsUIContainer = styled(View)`
 `;
 
 export const UserHeaderContainer = styled(View)`
-    padding-top: 24px
+    padding-top: 24px;
     padding-bottom: 16px;
     align-items: center;
 `;

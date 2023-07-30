@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
 import path from "node:path";
-import fs from 'node:fs';
+import fs from "node:fs";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 
@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        'shared-elements': path.resolve(__dirname, "src/index.tsx"),
+        "shared-elements": path.resolve(__dirname, "src/index.tsx"),
         polyfills: path.resolve(__dirname, "src/polyfills.ts"),
       },
       name: "SharedElements",
@@ -29,13 +29,13 @@ export default defineConfig({
         "react-native-vector-icons/MaterialIcons",
         "react-native-vector-icons/MaterialCommunityIcons",
         "@tanstack/react-query",
-        "@react-native-async-storage/async-storage"
+        "@react-native-async-storage/async-storage",
       ],
       output: {
         globals: {
           react: "React",
           "react-native": "ReactNative",
-          "react-dom": "ReactDOM"
+          "react-dom": "ReactDOM",
         },
       },
     },
