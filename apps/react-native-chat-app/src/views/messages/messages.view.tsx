@@ -44,7 +44,8 @@ export const MessagesView = () => {
     return (
       <View style={{ flex: 1 }}>
         <Text>
-          There was an error adding a message: {(mutation as any).error.message}
+          There was an error adding a message:{" "}
+          {(mutation.error as Error).message}
         </Text>
       </View>
     );

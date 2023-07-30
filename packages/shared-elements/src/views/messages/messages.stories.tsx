@@ -10,7 +10,7 @@ export default {
   component: MessagesUI,
 } as ComponentMeta<typeof MessagesUI>;
 
-const Template: ComponentStory<typeof MessagesUI> = (args) => {
+const Template: ComponentStory<typeof MessagesUI> = (_args) => {
   const [messageText, setMessageText] = useState("");
 
   const messages = [

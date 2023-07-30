@@ -9,7 +9,7 @@ export default {
   component: RoundedTextInput,
 } as ComponentMeta<typeof RoundedTextInput>;
 
-const Template: ComponentStory<typeof RoundedTextInput> = (args) => {
+const Template: ComponentStory<typeof RoundedTextInput> = (_args) => {
   const [value, setValue] = useState("");
 
   return (
