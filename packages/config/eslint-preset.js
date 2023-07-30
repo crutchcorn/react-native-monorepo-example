@@ -4,6 +4,7 @@ module.exports = {
     "@react-native-community",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   parser: "@typescript-eslint/parser",
   plugins: ["prettier"],

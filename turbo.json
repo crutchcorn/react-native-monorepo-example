@@ -21,6 +21,10 @@
     "tsc": {
       "dependsOn": ["^build"],
       "outputs": []
+    },
+    "storybook": {
+      "dependsOn": ["^build"],
+        "outputs": []
     }
   }
 }

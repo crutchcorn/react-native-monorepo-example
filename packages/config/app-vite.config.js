@@ -35,8 +35,8 @@ module.exports = {
       "react-dom",
       "styled-components",
       "styled-components/native",
-      "use-sync-external-store-shim",
-      "use-sync-external-store",
+      // "use-sync-external-store-shim",
+      // "use-sync-external-store",
     ],
   },
   build: {

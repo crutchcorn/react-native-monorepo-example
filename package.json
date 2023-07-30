@@ -8,7 +8,8 @@
     "format": "turbo run format",
     "tsc": "turbo run tsc",
     "test": "turbo run test -- --runInBand --forceExit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "turbo run storybook --filter @crutchcorn/shared-elements"
   },
   "workspaces": {
     "packages": [
