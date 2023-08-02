@@ -1,4 +1,6 @@
 import dayjs from "dayjs";
+// Needed for TS typing
+import "dayjs/plugin/relativeTime";
 import React, { useMemo } from "react";
 import { UserMessage } from "../../types/message";
 import {
