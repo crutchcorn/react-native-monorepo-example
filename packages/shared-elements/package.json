@@ -58,7 +58,7 @@
     "styled-components": "^6.0.5",
     "typescript": "^5.1.6",
     "vite": "^4.4.7",
-    "vite-plugin-dts": "^3.3.1"
+    "vite-plugin-dts": "^3.4.0"
   },
   "files": [
     "dist"

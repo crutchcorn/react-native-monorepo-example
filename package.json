@@ -19,9 +19,7 @@
   },
   "-- This ensures that you don't end up with compiler warnings due to mismatched type versions": "",
   "resolutions": {
-    "@types/react": "^18.0.21",
-    "react": "18.1.0",
-    "react-native": "0.70.3"
+    "@types/react": "^18.2.17"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
@@ -51,5 +49,5 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.6.1"
 }

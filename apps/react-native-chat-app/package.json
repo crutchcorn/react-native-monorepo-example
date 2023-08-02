@@ -35,10 +35,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.20.0",
+    "@babel/preset-env": "^7.22.9",
     "@babel/runtime": "^7.22.6",
     "@crutchcorn/config": "workspace:*",
-    "@react-native-community/eslint-config": "^3.2.0",
     "@testing-library/react-native": "^12.1.3",
     "@types/react": "^18.2.17",
     "@types/uuid": "^9.0.2",
