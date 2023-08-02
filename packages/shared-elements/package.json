@@ -7,8 +7,15 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "test": "jest",
-    "dev": "vite build --watch",
-    "build": "vite build",
+    "build": "run-p \"build:*\"",
+    "watch": "run-p \"watch:*\"",
+    "build:mobile": "vite build --config vite.config.mobile.ts",
+    "build:mobile:debug": "node --inspect-brk ./node_modules/vite/bin/vite.js build --config vite.config.mobile.ts",
+    "watch:mobile": "vite build --config vite.config.mobile.ts --watch --mode 'development'",
+    "build:web": "vite build --config vite.config.web.ts",
+    "build:web:debug": "node --inspect-brk ./node_modules/vite/bin/vite.js build --config vite.config.web.ts",
+    "watch:web": "vite build --config vite.config.web.ts --watch --mode 'development'",
+    "check:bundle": "vite build --config vite.config.web.bundle.ts",
     "tsc": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -68,15 +75,32 @@
   "module": "./dist/shared-elements-es.js",
   "react-native": "./dist/shared-elements-es.js",
   "exports": {
-    ".": {
-      "import": "./dist/shared-elements-es.js",
-      "require": "./dist/shared-elements-cjs.js",
-      "types": "./dist/index.d.ts"
+    "./mobile": {
+      "types": "./dist/mobile/index.d.ts",
+      "import": "./dist/mobile/mobile.mjs",
+      "require": "./dist/mobile/mobile.cjs",
+      "default": "./dist/mobile/mobile.cjs"
+    },
+    "./web": {
+      "types": "./dist/web/index.d.ts",
+      "import": "./dist/web/web.mjs",
+      "require": "./dist/web/web.cjs",
+      "default": "./dist/web/web.cjs"
     },
     "./polyfills": {
       "import": "./dist/polyfills-es.js",
       "require": "./dist/polyfills-cjs.js",
       "types": "./dist/polyfills.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "mobile": [
+        "./dist/mobile/index.d.ts"
+      ],
+      "web": [
+        "./dist/web/index.d.ts"
+      ]
     }
   },
   "dependencies": {

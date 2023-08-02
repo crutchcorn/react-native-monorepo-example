@@ -8,7 +8,7 @@ import {
   addMessage,
   MessagesUI,
   useMessages,
-} from "@crutchcorn/shared-elements";
+} from "@crutchcorn/shared-elements/mobile";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");

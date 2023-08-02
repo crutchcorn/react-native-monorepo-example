@@ -3,7 +3,6 @@ import { Meta, StoryFn } from "@storybook/react";
 
 import { ThemeProvider } from "../../components/theme-provider";
 import { MessagesUI } from "./messages.ui";
-import "../../polyfills";
 
 export default {
   title: "Views/Messages",

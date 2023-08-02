@@ -1,4 +1,4 @@
-import { SettingsUI, useSettings } from "@crutchcorn/shared-elements";
+import { SettingsUI, useSettings } from "@crutchcorn/shared-elements/web";
 import { useNavigate } from "react-router-dom";
 
 export const SettingsView = () => {
@@ -6,6 +6,12 @@ export const SettingsView = () => {
 
   const { settingsGroups } = useSettings();
 
-  return <SettingsUI goBack={() => navigate(-1)} username={"crutchcorn"} profilePicture={"/crutchcorn.jpg"}
-                     settingsGroups={settingsGroups} />;
+  return (
+    <SettingsUI
+      goBack={() => navigate(-1)}
+      username={"crutchcorn"}
+      profilePicture={"/crutchcorn.jpg"}
+      settingsGroups={settingsGroups}
+    />
+  );
 };

@@ -14,6 +14,10 @@ interface BottomBarProps {
   onTextValueChange: (val: string) => void;
 }
 
+const Container: typeof BottomBarContainerWeb = process.env.IS_WEB
+  ? (BottomBarContainerWeb as never)
+  : (BottomBarContainerMobile as never);
+
 export const BottomBar = ({
   placeholder,
   onAddPress,
@@ -21,12 +25,8 @@ export const BottomBar = ({
   textValue,
   onTextValueChange,
 }: BottomBarProps) => {
-  const { isWeb } = useDimensions();
   const theme = useTheme();
-  const Container = useMemo(
-    () => (isWeb ? BottomBarContainerWeb : BottomBarContainerMobile),
-    [isWeb],
-  ) as typeof BottomBarContainerWeb;
+
   return (
     <Container
       onSubmit={(e) => {

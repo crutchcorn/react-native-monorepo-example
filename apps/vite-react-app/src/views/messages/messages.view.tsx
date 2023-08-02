@@ -2,7 +2,11 @@ import React from "react";
 
 import { Text, View } from "react-native";
 import { useMutation } from "@tanstack/react-query";
-import { addMessage, MessagesUI, useMessages } from "@crutchcorn/shared-elements";
+import {
+  addMessage,
+  MessagesUI,
+  useMessages,
+} from "@crutchcorn/shared-elements/web";
 import { useNavigate } from "react-router-dom";
 
 export const MessagesView = () => {
@@ -14,7 +18,7 @@ export const MessagesView = () => {
     refetch,
     messageText,
     setMessageText,
-    messageListRef
+    messageListRef,
   } = useMessages();
 
   const mutation = useMutation(
@@ -23,12 +27,12 @@ export const MessagesView = () => {
         message: newMessage,
         username: "crutchcorn",
         date: new Date(),
-        profilePicture: '/crutchcorn.jpg',
+        profilePicture: "/crutchcorn.jpg",
       });
     },
     {
       onSuccess: () => refetch(),
-    }
+    },
   );
 
   // TODO: Make this nicer
@@ -36,7 +40,8 @@ export const MessagesView = () => {
     return (
       <View style={{ flex: 1 }}>
         <Text>
-          There was an error adding a message: {(mutation as any).error.message}
+          There was an error adding a message:{" "}
+          {(mutation.error as Error).message}
         </Text>
       </View>
     );

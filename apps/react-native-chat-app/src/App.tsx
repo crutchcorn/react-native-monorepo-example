@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { MessagesView } from "./views/messages/messages.view";
 import { SettingsView } from "./views/settings/settings.view";
 import { RootStack } from "./navigators/root";
-import { ThemeProvider } from "@crutchcorn/shared-elements";
+import { ThemeProvider } from "@crutchcorn/shared-elements/mobile";
 import styled from "styled-components/native";
 
 const queryClient = new QueryClient();

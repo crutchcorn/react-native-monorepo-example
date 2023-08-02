@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { RootScreenProps } from "../../navigators/root";
-import { SettingsUI, useSettings } from "@crutchcorn/shared-elements";
+import { SettingsUI, useSettings } from "@crutchcorn/shared-elements/mobile";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const crutchcornPicture = require("../../assets/crutchcorn.jpg");
