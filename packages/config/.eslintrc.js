@@ -1,1 +1,1 @@
-module.exports = require("@crutchcorn/config/eslint-preset");
+module.exports = require("./eslint-preset");

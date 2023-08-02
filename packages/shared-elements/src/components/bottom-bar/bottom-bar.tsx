@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { useTheme } from "../../hooks";
+import { useDimensions, useTheme } from "../../hooks";
 import { RoundedTextInput } from "../rounded-text-input";
-import {
-  BottomBarContainer,
-  AddMoreButton,
-  SendButton,
-} from "./bottom-bar.styles";
+import { AddMoreButton, SendButton } from "./bottom-bar.styles";
+import { BottomBarContainerWeb } from "./input-container.web.styles";
+import { BottomBarContainerMobile } from "./input-container.mobile.styles";
 
 interface BottomBarProps {
   placeholder: string;
@@ -23,9 +21,19 @@ export const BottomBar = ({
   textValue,
   onTextValueChange,
 }: BottomBarProps) => {
+  const { isWeb } = useDimensions();
   const theme = useTheme();
+  const Container = useMemo(
+    () => (isWeb ? BottomBarContainerWeb : BottomBarContainerMobile),
+    [isWeb],
+  ) as typeof BottomBarContainerWeb;
   return (
-    <BottomBarContainer>
+    <Container
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSendPress();
+      }}
+    >
       <AddMoreButton
         onPress={onAddPress}
         accessibilityLabel="Send an attachment"
@@ -40,6 +48,6 @@ export const BottomBar = ({
       <SendButton onPress={onSendPress} accessibilityLabel="Send message">
         <Icon name="send" size={20} color={theme.brand_on_accent} />
       </SendButton>
-    </BottomBarContainer>
+    </Container>
   );
 };
