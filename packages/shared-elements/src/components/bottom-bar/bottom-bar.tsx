@@ -1,6 +1,6 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import { useDimensions, useTheme } from "../../hooks";
+import { useTheme } from "../../hooks";
 import { RoundedTextInput } from "../rounded-text-input";
 import { AddMoreButton, SendButton } from "./bottom-bar.styles";
 import { BottomBarContainerWeb } from "./input-container.web.styles";
