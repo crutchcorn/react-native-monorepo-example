@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
-    "plugin:jest/recommended",
     "@react-native",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
+    "plugin:jest/recommended",
     "plugin:storybook/recommended",
   ],
   parser: "@typescript-eslint/parser",

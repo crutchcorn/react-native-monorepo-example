@@ -19,7 +19,8 @@
   },
   "-- This ensures that you don't end up with compiler warnings due to mismatched type versions": "",
   "resolutions": {
-    "@types/react": "^18.2.17"
+    "@types/react": "^18.2.17",
+    "eslint-plugin-prettier": "^5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",

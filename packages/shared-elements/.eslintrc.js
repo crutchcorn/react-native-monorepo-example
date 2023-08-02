@@ -1,1 +1,1 @@
-module.exports = require("@crutchcorn/config/eslint-preset");
+module.exports = {root: true, ...require("@crutchcorn/config/eslint-preset")};

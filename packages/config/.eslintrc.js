@@ -1,1 +1,1 @@
-module.exports = require("./eslint-preset");
+module.exports = { root: true, ...require("./eslint-preset") };
