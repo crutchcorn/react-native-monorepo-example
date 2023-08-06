@@ -1,19 +1,20 @@
 import { baseConfig } from "./base-config";
 import { removeMobileCodePlugin } from "./remove-mobile-code-plugin";
-import path from "node:path";
-import { resolve } from "path";
+import { resolve } from "node:path";
 import { baseOutDir, commonFormats, getFileName } from "./common-config";
 import { InlineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import { transformNativePlugin } from "./transform-native-plugin";
 
 export const getWebConfig = () =>
   ({
     ...baseConfig,
     plugins: [
       removeMobileCodePlugin(),
+      transformNativePlugin(),
       ...baseConfig.plugins,
       dts({
-        entryRoot: path.resolve(__dirname, "../src"),
+        entryRoot: resolve(__dirname, "../src"),
         outDir: resolve(__dirname, "..", baseOutDir, "web"),
       }),
     ],
@@ -27,4 +28,4 @@ export const getWebConfig = () =>
         formats: commonFormats,
       },
     },
-  } satisfies InlineConfig);
+  }) satisfies InlineConfig;

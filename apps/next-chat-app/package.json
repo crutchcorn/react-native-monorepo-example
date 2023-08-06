@@ -2,7 +2,7 @@
   "name": "next-chat-app",
   "version": "0.1.0",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,7 +19,8 @@
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "webpack": "^5.88.2"
   },
   "dependencies": {
     "@crutchcorn/shared-elements": "workspace:*",

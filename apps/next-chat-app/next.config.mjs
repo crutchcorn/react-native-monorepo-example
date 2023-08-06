@@ -1,5 +1,11 @@
-const { DefinePlugin } = require('webpack');
-const path = require("path");
+import webpack from "webpack";
+import path from "path";
+
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 const defaultExtensions = [
   ".mjs",
@@ -22,11 +28,13 @@ const nextConfig = {
 
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      'react-native$': require.resolve('react-native-web'),
-      "react-native-vector-icons/MaterialIcons": "react-native-vector-icons/dist/MaterialIcons",
-      "react-native-vector-icons/MaterialCommunityIcons": "react-native-vector-icons/dist/MaterialCommunityIcons",
+      "react-native$": "react-native-web",
+      "react-native-vector-icons/MaterialIcons":
+        "react-native-vector-icons/dist/MaterialIcons",
+      "react-native-vector-icons/MaterialCommunityIcons":
+        "react-native-vector-icons/dist/MaterialCommunityIcons",
       // Needed for styled-components/native
-      "postcss-safe-parser": path.resolve(__dirname, "webpack", "noop.js")
+      "postcss-safe-parser": path.resolve(__dirname, "webpack", "noop.js"),
     };
 
     config.resolve.extensions = [
@@ -43,13 +51,13 @@ const nextConfig = {
 
     // Expose __DEV__ from Metro.
     config.plugins.push(
-      new DefinePlugin({
-        __DEV__: JSON.stringify(process.env.NODE_ENV !== 'production'),
-      })
+      new webpack.DefinePlugin({
+        __DEV__: JSON.stringify(process.env.NODE_ENV !== "production"),
+      }),
     );
 
     return config;
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
