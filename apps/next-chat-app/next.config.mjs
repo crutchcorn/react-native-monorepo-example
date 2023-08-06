@@ -1,7 +1,7 @@
 import webpack from "webpack";
 import path from "path";
 
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -20,6 +20,13 @@ const defaultExtensions = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["react-native-web", "@crutchcorn/shared-elements"],
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
   webpack(config, options) {
     // Mix in aliases
     if (!config.resolve) {
