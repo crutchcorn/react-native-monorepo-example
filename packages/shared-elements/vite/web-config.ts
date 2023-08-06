@@ -4,14 +4,14 @@ import { resolve } from "node:path";
 import { baseOutDir, commonFormats, getFileName } from "./common-config";
 import { InlineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import { transformNativePlugin } from "./transform-native-plugin";
+import { changeStyledToNamedPlugin } from "./change-styled-to-named-plugin";
 
 export const getWebConfig = () =>
   ({
     ...baseConfig,
     plugins: [
       removeMobileCodePlugin(),
-      transformNativePlugin(),
+      changeStyledToNamedPlugin(),
       ...baseConfig.plugins,
       dts({
         entryRoot: resolve(__dirname, "../src"),
